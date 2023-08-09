@@ -1,0 +1,12 @@
+==============
+Let statements
+==============
+
+let a = x;
+let fn f(x) {};
+
+---
+
+(module (sequence
+    (let (ident) (ident))
+    (let (ident) (ident))))

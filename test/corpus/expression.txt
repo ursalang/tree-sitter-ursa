@@ -1,0 +1,22 @@
+===================
+Primary Expressions
+===================
+
+3 + 4;
+(3 + 4) * 5;
+pi;
+3 + 4 == 7;
+not 2;
+
+---
+
+(module (sequence
+    (binary_exp (number) (number))
+    (binary_exp
+        (binary_exp (number) (number))
+        (number))
+    (ident)
+    (binary_exp
+        (binary_exp (number) (number))
+        (number))
+    (unary_exp (number))))

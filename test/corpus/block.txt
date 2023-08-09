@@ -1,0 +1,10 @@
+======
+Blocks
+======
+
+{ pi; };
+
+---
+
+(module (sequence
+    (sequence (ident))))

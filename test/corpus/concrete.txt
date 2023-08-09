@@ -1,0 +1,22 @@
+=======
+Numbers
+=======
+
+4;
+
+---
+
+(module (sequence
+    (number)))
+
+
+=======
+Strings
+=======
+
+"hello \u00e9";
+
+---
+
+(module (sequence
+    (string)))
