@@ -1,0 +1,19 @@
+===========
+Assignments
+===========
+
+a = 3;
+b = "hello";
+c = 3 + (4 * 5);
+d = [1, 2, 3];
+
+---
+
+(module (sequence
+    (assignment (ident) (number))
+    (assignment (ident) (string))
+    (assignment (ident)
+        (binary_exp (number)
+            (binary_exp (number) (number))))
+    (assignment (ident)
+        (list (number) (number) (number)))))

@@ -1,0 +1,14 @@
+=====
+Lists
+=====
+
+[1, 2, 3];
+[1, 2, 3].length;
+[1, 2, 3][1]
+
+---
+
+(module (sequence
+    (list (number) (number) (number))
+    (property_exp (list (number) (number) (number)) (ident))
+    (index_exp (list (number) (number) (number)) (number))))

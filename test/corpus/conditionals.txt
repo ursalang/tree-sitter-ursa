@@ -1,0 +1,28 @@
+============
+Conditionals
+============
+
+if true {3};
+if true {3} else {4};
+if false {3} else {4};
+if 3 + 4 == 7 {1} else {0};
+1 or 2;
+1 and 2;
+
+---
+
+(module (sequence
+    (if (bool) (sequence (number)))
+    (if (bool) (sequence (number))
+        (sequence (number)))
+    (if (bool)
+        (sequence (number))
+        (sequence (number)))
+    (if
+        (binary_exp
+            (binary_exp (number) (number))
+            (number))
+        (sequence (number))
+        (sequence (number)))
+    (binary_exp (number) (number))
+    (binary_exp (number) (number))))

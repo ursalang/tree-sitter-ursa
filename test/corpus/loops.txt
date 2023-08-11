@@ -1,0 +1,11 @@
+=====
+Loops
+=====
+
+loop { break 3 }
+
+---
+
+(module (sequence
+    (loop
+        (sequence (break (number))))))

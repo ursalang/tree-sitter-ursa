@@ -1,0 +1,19 @@
+=========
+Functions
+=========
+
+let f = fn(x) {x + 1}; f(1)
+
+---
+
+(module (sequence
+    (let
+        (ident)
+        (lambda
+            (ident)
+            (sequence
+                (binary_exp
+                (ident)
+                (number)))))
+    (call (ident) (number))
+))

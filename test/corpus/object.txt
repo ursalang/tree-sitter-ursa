@@ -1,0 +1,14 @@
+=======
+Objects
+=======
+
+{};
+{a: 1, b: "hello"}
+
+---
+
+(module (sequence
+    (object)
+    (object
+        (ident) (number)
+        (ident) (string))))
