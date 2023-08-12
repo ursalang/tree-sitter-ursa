@@ -131,7 +131,7 @@ module.exports = grammar({
     property_exp: $ => prec.right(10, seq(
       $._exp,
       token.immediate('.'),
-      sep1($.identifier, token.immediate('.'))
+      sep1(alias($.identifier, $.property_identifier), token.immediate('.'))
     )),
 
     identifier: $ => /\p{ID_Start}\p{ID_Continue}*/,
