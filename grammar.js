@@ -114,7 +114,7 @@ module.exports = grammar({
       prec.left(3, seq($._exp, '-', $._exp)),
       prec.left(4, seq($._exp, '*', $._exp)),
       prec.left(4, seq($._exp, '/', $._exp)),
-      prec.left(4, seq($._exp, '//', $._exp)),
+      prec.left(4, seq($._exp, '%', $._exp)),
       prec.left(5, seq($._exp, '**', $._exp)),
     ),
 
