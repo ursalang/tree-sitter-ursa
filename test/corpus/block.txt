@@ -8,7 +8,7 @@ Blocks
 
 ---
 
-(module (sequence
-    (sequence (identifier))
-    (sequence (identifier) (binary_exp (number) (number)))
-    (sequence (identifier) (binary_exp (number) (number)))))
+(module
+    (block (identifier))
+    (block (identifier) (binary_exp (number) (number)))
+    (block (identifier) (binary_exp (number) (number))))

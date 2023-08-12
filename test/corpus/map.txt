@@ -7,7 +7,7 @@ let t = {"a": 1, "b": 2 + 0, 3: 4}; t["b"] = 1; t
 
 ---
 
-(module (sequence
+(module
     (map
         (string) (number)
         (string) (binary_exp (number) (number))
@@ -19,4 +19,4 @@ let t = {"a": 1, "b": 2 + 0, 3: 4}; t["b"] = 1; t
             (number) (number)))
     (assignment
         (index_exp (identifier) (string)) (number))
-    (identifier)))
+    (identifier))

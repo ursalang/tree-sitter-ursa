@@ -6,8 +6,8 @@ Numbers
 
 ---
 
-(module (sequence
-    (number)))
+(module 
+    (number))
 
 
 =======
@@ -18,5 +18,5 @@ Strings
 
 ---
 
-(module (sequence
-    (string)))
+(module
+    (string))

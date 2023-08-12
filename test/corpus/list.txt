@@ -8,7 +8,7 @@ Lists
 
 ---
 
-(module (sequence
+(module
     (list (number) (number) (number))
     (property_exp (list (number) (number) (number)) (property_identifier))
-    (index_exp (list (number) (number) (number)) (number))))
+    (index_exp (list (number) (number) (number)) (number)))

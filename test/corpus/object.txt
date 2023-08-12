@@ -7,8 +7,8 @@ Objects
 
 ---
 
-(module (sequence
+(module
     (object)
     (object
         (identifier) (number)
-        (identifier) (string))))
+        (identifier) (string)))

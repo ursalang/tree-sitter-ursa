@@ -6,14 +6,15 @@ let f = fn(x) {x + 1}; f(1)
 
 ---
 
-(module (sequence
+(module
     (let
         (identifier)
+        (fn
         (lambda
             (identifier)
-            (sequence
+            (block
                 (binary_exp
                 (identifier)
-                (number)))))
+                (number))))))
     (call (identifier) (number))
-))
+)

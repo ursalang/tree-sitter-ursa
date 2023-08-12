@@ -11,9 +11,9 @@ module.exports = grammar({
   ],
 
   rules: {
-    module: $ => optional($.sequence),
+    module: $ => optional($._sequence),
 
-    sequence: $ => seq(sep1($._statement, $._sc), optional($._sc)),
+    _sequence: $ => seq(sep1($._statement, $._sc), optional($._sc)),
 
     _statement: $ => choice(
       $.let,
@@ -21,7 +21,7 @@ module.exports = grammar({
       $._exp,
     ),
 
-    _block: $ => seq('{', $.sequence, '}'),
+    block: $ => seq('{', $._sequence, '}'),
 
     let: $ => choice(
       seq(
@@ -42,11 +42,11 @@ module.exports = grammar({
       $.binary_exp,
       $.unary_exp,
       $.if,
-      $._fn,
+      $.fn,
       $.loop,
       $.assignment,
       seq('(', $._exp, ')'),
-      $._block,
+      $.block,
       $.call,
       $.index_exp,
       $.property_exp,
@@ -67,9 +67,9 @@ module.exports = grammar({
 
     return: $ => prec.right(seq('return', optional($._exp))),
 
-    if: $ => seq('if', $._exp, $._block, optional(seq('else', $._block))),
+    if: $ => seq('if', $._exp, $.block, optional(seq('else', $.block))),
 
-    _fn: $ => choice(
+    fn: $ => choice(
       seq('fn', $.lambda),
       $._named_fn,
     ),
@@ -85,10 +85,10 @@ module.exports = grammar({
       sep($.identifier, ','),
       optional(','),
       ')',
-      $._block,
+      $.block,
     ),
 
-    loop: $ => seq('loop', $._block),
+    loop: $ => seq('loop', $.block),
 
     list: $ => seq('[', sep($._exp, ','), ']'),
 

@@ -9,11 +9,11 @@ d = [1, 2, 3];
 
 ---
 
-(module (sequence
+(module
     (assignment (identifier) (number))
     (assignment (identifier) (string))
     (assignment (identifier)
         (binary_exp (number)
             (binary_exp (number) (number))))
     (assignment (identifier)
-        (list (number) (number) (number)))))
+        (list (number) (number) (number))))

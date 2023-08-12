@@ -10,7 +10,7 @@ not 2;
 
 ---
 
-(module (sequence
+(module
     (binary_exp (number) (number))
     (binary_exp
         (binary_exp (number) (number))
@@ -19,4 +19,4 @@ not 2;
     (binary_exp
         (binary_exp (number) (number))
         (number))
-    (unary_exp (number))))
+    (unary_exp (number)))

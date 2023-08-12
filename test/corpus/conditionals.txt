@@ -11,18 +11,18 @@ if 3 + 4 == 7 {1} else {0};
 
 ---
 
-(module (sequence
-    (if (bool) (sequence (number)))
-    (if (bool) (sequence (number))
-        (sequence (number)))
+(module
+    (if (bool) (block (number)))
+    (if (bool) (block (number))
+        (block (number)))
     (if (bool)
-        (sequence (number))
-        (sequence (number)))
+        (block (number))
+        (block (number)))
     (if
         (binary_exp
             (binary_exp (number) (number))
             (number))
-        (sequence (number))
-        (sequence (number)))
+        (block (number))
+        (block (number)))
     (binary_exp (number) (number))
-    (binary_exp (number) (number))))
+    (binary_exp (number) (number)))
