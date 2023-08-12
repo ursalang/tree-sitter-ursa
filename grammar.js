@@ -17,6 +17,7 @@ module.exports = grammar({
 
     _statement: $ => choice(
       $.let,
+      $.use,
       $._exp,
     ),
 
@@ -29,11 +30,12 @@ module.exports = grammar({
         '=',
         field('value', $._exp)
       ),
-      seq('let', $._named_fn)
+      seq('let', $._named_fn),
     ),
-    //   | "use" ListOf<ident, #".">                          -- use
 
-    _sc: $ => ';', // FIXME: make semi-colons optional
+    use: $ => seq('use', sep1($.ident, token.immediate('.'))),
+
+    _sc: () => ';', // FIXME: make semi-colons optional
 
     _exp: $ => choice(
       $.ident,
@@ -140,8 +142,7 @@ module.exports = grammar({
 
     null: () => 'null',
 
-    // Here we tolerate unescaped newlines in double-quoted and
-    // single-quoted string literals.
+    // Here we tolerate unescaped newlines in string literals.
     string: $ => seq(
       '"',
       repeat(choice(
@@ -154,7 +155,6 @@ module.exports = grammar({
     // Workaround to https://github.com/tree-sitter/tree-sitter/issues/1156
     // We give names to the token() constructs containing a regexp
     // so as to obtain a node in the CST.
-    //
     _unescaped_string_fragment: $ =>
       token.immediate(prec(1, /[^"\\]+/)),
 
