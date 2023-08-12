@@ -2,9 +2,10 @@
   "name": "tree-sitter-ursa",
   "version": "1.0.0",
   "description": "Tree-sitter grammar for Ursa.",
+  "repository": "https://github.com/rrthomas/tree-sitter-ursa",
   "main": "bindings/node",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "tree-sitter test"
   },
   "author": "Reuben Thomas",
   "license": "ISC",
