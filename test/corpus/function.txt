@@ -9,12 +9,11 @@ let f = fn(x) {x + 1}; f(1)
 (module
     (let
         (identifier)
-        (fn
         (lambda
             (identifier)
             (block
                 (binary_exp
                 (identifier)
-                (number))))))
+                (number)))))
     (call (identifier) (number))
 )

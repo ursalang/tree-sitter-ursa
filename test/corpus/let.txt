@@ -9,5 +9,5 @@ let fn f(x) { x + 1 };
 
 (module
     (let (identifier) (identifier))
-    (let (identifier) (lambda (identifier)
-        (block (binary_exp (identifier) (number))))))
+    (let (named_fn (identifier) (lambda (identifier)
+        (block (binary_exp (identifier) (number)))))))

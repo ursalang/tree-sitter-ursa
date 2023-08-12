@@ -30,7 +30,7 @@ module.exports = grammar({
         '=',
         field('value', $._exp)
       ),
-      seq('let', $._named_fn),
+      seq('let', $.named_fn),
     ),
 
     use: $ => seq('use', sep1($.identifier, token.immediate('.'))),
@@ -42,7 +42,7 @@ module.exports = grammar({
       $.binary_exp,
       $.unary_exp,
       $.if,
-      $.fn,
+      $._fn,
       $.loop,
       $.assignment,
       seq('(', $._exp, ')'),
@@ -69,12 +69,12 @@ module.exports = grammar({
 
     if: $ => seq('if', $._exp, $.block, optional(seq('else', $.block))),
 
-    fn: $ => choice(
+    _fn: $ => choice(
       seq('fn', $.lambda),
-      $._named_fn,
+      $.named_fn,
     ),
 
-    _named_fn: $ => seq(
+    named_fn: $ => seq(
       'fn',
       field('identifier', $.identifier),
       $.lambda,
@@ -126,7 +126,7 @@ module.exports = grammar({
 
     index_exp: $ => prec.right(8, seq($._exp, '[', $._exp, ']')),
 
-    call: $ => prec.left(9, seq($._exp, '(', sep($._exp, ','), ')')),
+    call: $ => prec.left(9, seq(field('function', $._exp), '(', sep($._exp, ','), ')')),
 
     property_exp: $ => prec.right(10, seq(
       $._exp,
