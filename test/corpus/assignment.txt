@@ -10,10 +10,10 @@ d = [1, 2, 3];
 ---
 
 (module (sequence
-    (assignment (ident) (number))
-    (assignment (ident) (string))
-    (assignment (ident)
+    (assignment (identifier) (number))
+    (assignment (identifier) (string))
+    (assignment (identifier)
         (binary_exp (number)
             (binary_exp (number) (number))))
-    (assignment (ident)
+    (assignment (identifier)
         (list (number) (number) (number)))))

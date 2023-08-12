@@ -15,7 +15,7 @@ not 2;
     (binary_exp
         (binary_exp (number) (number))
         (number))
-    (ident)
+    (identifier)
     (binary_exp
         (binary_exp (number) (number))
         (number))

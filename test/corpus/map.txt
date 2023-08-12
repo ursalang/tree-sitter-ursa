@@ -13,10 +13,10 @@ let t = {"a": 1, "b": 2 + 0, 3: 4}; t["b"] = 1; t
         (string) (binary_exp (number) (number))
         (number) (number))
     (let
-        (ident) (map
+        (identifier) (map
             (string) (number)
             (string) (binary_exp (number) (number))
             (number) (number)))
     (assignment
-        (index_exp (ident) (string)) (number))
-    (ident)))
+        (index_exp (identifier) (string)) (number))
+    (identifier)))

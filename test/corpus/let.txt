@@ -8,6 +8,6 @@ let fn f(x) { x + 1 };
 ---
 
 (module (sequence
-    (let (ident) (ident))
-    (let (ident) (lambda (ident)
-        (sequence (binary_exp (ident) (number)))))))
+    (let (identifier) (identifier))
+    (let (identifier) (lambda (identifier)
+        (sequence (binary_exp (identifier) (number)))))))

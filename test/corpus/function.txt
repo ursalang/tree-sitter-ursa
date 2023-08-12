@@ -8,12 +8,12 @@ let f = fn(x) {x + 1}; f(1)
 
 (module (sequence
     (let
-        (ident)
+        (identifier)
         (lambda
-            (ident)
+            (identifier)
             (sequence
                 (binary_exp
-                (ident)
+                (identifier)
                 (number)))))
-    (call (ident) (number))
+    (call (identifier) (number))
 ))

@@ -10,5 +10,5 @@ Lists
 
 (module (sequence
     (list (number) (number) (number))
-    (property_exp (list (number) (number) (number)) (ident))
+    (property_exp (list (number) (number) (number)) (identifier))
     (index_exp (list (number) (number) (number)) (number))))

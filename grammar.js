@@ -26,19 +26,19 @@ module.exports = grammar({
     let: $ => choice(
       seq(
         'let',
-        field('ident', $.ident),
+        field('identifier', $.identifier),
         '=',
         field('value', $._exp)
       ),
       seq('let', $._named_fn),
     ),
 
-    use: $ => seq('use', sep1($.ident, token.immediate('.'))),
+    use: $ => seq('use', sep1($.identifier, token.immediate('.'))),
 
     _sc: $ => choice($._automatic_semicolon, ';'),
 
     _exp: $ => choice(
-      $.ident,
+      $.identifier,
       $.binary_exp,
       $.unary_exp,
       $.if,
@@ -76,13 +76,13 @@ module.exports = grammar({
 
     _named_fn: $ => seq(
       'fn',
-      field('ident', $.ident),
+      field('identifier', $.identifier),
       $.lambda,
     ),
 
     lambda: $ => seq(
       '(',
-      sep($.ident, ','),
+      sep($.identifier, ','),
       optional(','),
       ')',
       $._block,
@@ -92,12 +92,12 @@ module.exports = grammar({
 
     list: $ => seq('[', sep($._exp, ','), ']'),
 
-    object: $ => prec(1, seq('{', sep(seq($.ident, ':', $._exp), ','), '}')),
+    object: $ => prec(1, seq('{', sep(seq($.identifier, ':', $._exp), ','), '}')),
 
     map: $ => seq('{', sep(seq($._exp, ':', $._exp), ','), '}'),
 
     assignment: $ => prec.right(choice(
-      seq($.ident, '=', $._exp),
+      seq($.identifier, '=', $._exp),
       seq($.index_exp, '=', $._exp),
     )),
 
@@ -131,10 +131,10 @@ module.exports = grammar({
     property_exp: $ => prec.right(10, seq(
       $._exp,
       token.immediate('.'),
-      sep1($.ident, token.immediate('.'))
+      sep1($.identifier, token.immediate('.'))
     )),
 
-    ident: $ => /\p{ID_Start}\p{ID_Continue}*/,
+    identifier: $ => /\p{ID_Start}\p{ID_Continue}*/,
 
     number: $ => /[0-9.eE]+/,
 

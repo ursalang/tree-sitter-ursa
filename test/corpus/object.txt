@@ -10,5 +10,5 @@ Objects
 (module (sequence
     (object)
     (object
-        (ident) (number)
-        (ident) (string))))
+        (identifier) (number)
+        (identifier) (string))))
