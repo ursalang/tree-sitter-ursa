@@ -134,7 +134,7 @@ module.exports = grammar({
       sep1($.ident, token.immediate('.'))
     )),
 
-    ident: $ => /[A-Za-z][A-Za-z0-9]*/, // FIXME: make more precise
+    ident: $ => /\p{ID_Start}\p{ID_Continue}*/,
 
     number: $ => /[0-9.eE]+/,
 
