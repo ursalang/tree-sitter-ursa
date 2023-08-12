@@ -6,9 +6,9 @@ module.exports = grammar({
     /[\s]/,
   ],
 
-  // externals: $ => [
-  //   $._automatic_semicolon,
-  // ],
+  externals: $ => [
+    $._automatic_semicolon,
+  ],
 
   rules: {
     module: $ => optional($.sequence),
@@ -35,7 +35,7 @@ module.exports = grammar({
 
     use: $ => seq('use', sep1($.ident, token.immediate('.'))),
 
-    _sc: () => ';', // FIXME: make semi-colons optional
+    _sc: $ => choice($._automatic_semicolon, ';'),
 
     _exp: $ => choice(
       $.ident,
