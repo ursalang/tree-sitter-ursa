@@ -11,7 +11,12 @@ module.exports = grammar({
   ],
 
   rules: {
-    module: $ => optional($._sequence),
+    module: $ => seq(
+      optional($._shebang),
+      optional($._sequence),
+    )
+
+    _shebang: $ => alias(token(seq("#!", /.*/)), $.comment),
 
     _sequence: $ => seq(sep1($._statement, $._sc), optional($._sc)),
 
