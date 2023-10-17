@@ -14,7 +14,7 @@ module.exports = grammar({
     module: $ => seq(
       optional($._shebang),
       optional($._sequence),
-    )
+    ),
 
     _shebang: $ => alias(token(seq("#!", /.*/)), $.comment),
 
