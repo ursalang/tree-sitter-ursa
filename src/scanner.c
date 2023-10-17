@@ -27,11 +27,6 @@ void tree_sitter_ursa_external_scanner_deserialize(void *p, const char *b, unsig
 {
 }
 
-static void advance(TSLexer *lexer)
-{
-    lexer->advance(lexer, false);
-}
-
 static void skip(TSLexer *lexer)
 {
     lexer->advance(lexer, true);
