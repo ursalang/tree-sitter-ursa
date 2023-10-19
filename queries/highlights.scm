@@ -96,4 +96,7 @@
   "loop"
   "return"
   "use"
+  "and"
+  "or"
+  "not"
 ] @keyword
