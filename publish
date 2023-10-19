@@ -1,0 +1,8 @@
+#!/bin/sh
+# Set version and publish package
+
+VERSION=$1
+rpl 'version = .*' "version = $VERSION" Cargo.toml
+npm version $VERSION
+npm publish
+cargo publish
