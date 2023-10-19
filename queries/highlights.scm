@@ -84,7 +84,7 @@
   "]"
   "{"
   "}"
-]  @punctuation.bracket
+] @punctuation.bracket
 
 [
   "break"
