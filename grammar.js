@@ -1,13 +1,23 @@
+/**
+ * Tree-sitter grammar for Ursa
+ * © 2023 Reuben Thomas
+ * It is distributed under the ISC licence.
+ */
+
+// The reference grammar is https://github.com/ursalang/ohm-grammar
+
 module.exports = grammar({
   name: 'ursa',
 
   extras: $ => [
-    $.comment,
+    $.line_comment,
+    $.block_comment,
     /[\s]/,
   ],
 
   externals: $ => [
     $._automatic_semicolon,
+    $.block_comment,
   ],
 
   rules: {
@@ -16,7 +26,7 @@ module.exports = grammar({
       optional($._sequence),
     ),
 
-    _shebang: $ => alias(token(seq("#!", /.*/)), $.comment),
+    _shebang: $ => alias(token(seq("#!", /.*/)), $.line_comment),
 
     _sequence: $ => seq(sep1($._statement, $._sc), optional($._sc)),
 
@@ -26,7 +36,7 @@ module.exports = grammar({
       $._exp,
     ),
 
-    block: $ => seq('{', $._sequence, '}'),
+    block: $ => seq('{', optional($._sequence), '}'),
 
     let: $ => choice(
       seq(
@@ -174,7 +184,12 @@ module.exports = grammar({
       )
     )),
 
-    comment: () => token(seq('//', /.*/)),
+    comment: $ => choice(
+      $.line_comment,
+      $.block_comment,
+    ),
+
+    line_comment: () => token(seq('//', /.*/)),
   },
 });
 

@@ -3,7 +3,12 @@
 
 enum TokenType {
     AUTOMATIC_SEMICOLON,
+    BLOCK_COMMENT,
 };
+
+static void advance(TSLexer *lexer) {
+  lexer->advance(lexer, false);
+}
 
 void *tree_sitter_ursa_external_scanner_create()
 {
@@ -61,6 +66,49 @@ bool tree_sitter_ursa_external_scanner_scan(void *payload, TSLexer *lexer,
 {
     if (valid_symbols[AUTOMATIC_SEMICOLON]) {
         return scan_automatic_semicolon(lexer);
+    }
+
+    while (iswspace(lexer->lookahead)) lexer->advance(lexer, true);
+
+    if (lexer->lookahead == '/') {
+        advance(lexer);
+        if (lexer->lookahead != '*') return false;
+        advance(lexer);
+
+        bool after_star = false;
+        unsigned nesting_depth = 1;
+        for (;;) {
+            switch (lexer->lookahead) {
+            case '\0':
+                return false;
+            case '*':
+                advance(lexer);
+                after_star = true;
+                break;
+            case '/':
+                if (after_star) {
+                    advance(lexer);
+                    after_star = false;
+                    nesting_depth--;
+                    if (nesting_depth == 0) {
+                        lexer->result_symbol = BLOCK_COMMENT;
+                        return true;
+                    }
+                } else {
+                    advance(lexer);
+                    after_star = false;
+                    if (lexer->lookahead == '*') {
+                        nesting_depth++;
+                        advance(lexer);
+                    }
+                }
+                break;
+            default:
+                advance(lexer);
+                after_star = false;
+                break;
+            }
+        }
     }
 
     return false;

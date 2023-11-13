@@ -46,11 +46,15 @@
   (null)
 ] @constant.builtin
 
-(comment) @comment
-
 (string) @string
 
 (number) @number
+
+; Comments
+;---------
+
+(line_comment) @comment
+(block_comment) @comment
 
 ; Tokens
 ;-------

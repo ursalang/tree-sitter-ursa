@@ -1,10 +1,22 @@
-========
-Comments
-========
+=============
+Line comments
+=============
 
 // Comment
 
 ---
 
 (module
-    (comment))
+    (line_comment))
+
+
+==============
+Block comments
+==============
+
+/* Comment /* with a nested comment */ */
+
+---
+
+(module
+    (block_comment))

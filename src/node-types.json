@@ -1209,10 +1209,6 @@
           "named": true
         },
         {
-          "type": "comment",
-          "named": true
-        },
-        {
           "type": "continue",
           "named": true
         },
@@ -1234,6 +1230,10 @@
         },
         {
           "type": "let",
+          "named": true
+        },
+        {
+          "type": "line_comment",
           "named": true
         },
         {
@@ -1826,12 +1826,12 @@
     "named": false
   },
   {
-    "type": "break",
-    "named": false
+    "type": "block_comment",
+    "named": true
   },
   {
-    "type": "comment",
-    "named": true
+    "type": "break",
+    "named": false
   },
   {
     "type": "continue",
@@ -1860,6 +1860,10 @@
   {
     "type": "let",
     "named": false
+  },
+  {
+    "type": "line_comment",
+    "named": true
   },
   {
     "type": "loop",
