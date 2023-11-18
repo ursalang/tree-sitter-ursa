@@ -7,7 +7,7 @@ if test -z "$VERSION"; then
     exit 1
 fi
 
-rpl 'version = .*' "version = $VERSION" Cargo.toml
+rpl 'version = .*' "version = \"$VERSION\"" Cargo.toml
 git ci -m "Bump Cargo version to $VERSION" Cargo.toml && git push
 npm version $VERSION
 npm publish
