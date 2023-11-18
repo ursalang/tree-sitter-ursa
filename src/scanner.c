@@ -4,6 +4,7 @@
 enum TokenType {
     AUTOMATIC_SEMICOLON,
     BLOCK_COMMENT,
+    RAW_STRING_LITERAL,
 };
 
 static void advance(TSLexer *lexer) {
@@ -69,6 +70,43 @@ bool tree_sitter_ursa_external_scanner_scan(void *payload, TSLexer *lexer,
     }
 
     while (iswspace(lexer->lookahead)) lexer->advance(lexer, true);
+
+    if (
+        valid_symbols[RAW_STRING_LITERAL] &&
+        (lexer->lookahead == 'r' || lexer->lookahead == 'b')
+        ) {
+        lexer->result_symbol = RAW_STRING_LITERAL;
+        if (lexer->lookahead == 'b') advance(lexer);
+        if (lexer->lookahead != 'r') return false;
+        advance(lexer);
+
+        unsigned opening_hash_count = 0;
+        while (lexer->lookahead == '#') {
+            advance(lexer);
+            opening_hash_count++;
+        }
+
+        if (lexer->lookahead != '"') return false;
+        advance(lexer);
+
+        for (;;) {
+            if (lexer->lookahead == 0) {
+                return false;
+            } else if (lexer->lookahead == '"') {
+                advance(lexer);
+                unsigned hash_count = 0;
+                while (lexer->lookahead == '#' && hash_count < opening_hash_count) {
+                    advance(lexer);
+                    hash_count++;
+                }
+                if (hash_count == opening_hash_count) {
+                    return true;
+                }
+            } else {
+                advance(lexer);
+            }
+        }
+    }
 
     if (lexer->lookahead == '/') {
         advance(lexer);

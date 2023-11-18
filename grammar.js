@@ -18,6 +18,7 @@ module.exports = grammar({
   externals: $ => [
     $._automatic_semicolon,
     $.block_comment,
+    $.raw_string_literal,
   ],
 
   rules: {
@@ -28,36 +29,30 @@ module.exports = grammar({
 
     _shebang: $ => alias(token(seq("#!", /.*/)), $.line_comment),
 
-    _sequence: $ => seq(sep1($._statement, $._sc), optional($._sc)),
-
-    _statement: $ => choice(
-      $.let,
-      $.use,
-      $._exp,
-    ),
+    _sequence: $ => seq(sep1($._exp, $._sc), optional($._sc)),
 
     block: $ => seq('{', optional($._sequence), '}'),
 
-    let: $ => choice(
-      seq(
-        'let',
-        field('identifier', $.identifier),
-        '=',
-        field('value', $._exp)
-      ),
-      seq('let', $.named_fn),
+    let: $ => seq(
+      'let',
+      field('identifier', $.identifier),
+      '=',
+      field('value', $._exp)
     ),
 
-    use: $ => seq('use', sep1($.identifier, token.immediate('.'))),
+    use: $ => prec.right(seq('use', sep1($.identifier, token.immediate('.')))),
 
     _sc: $ => choice($._automatic_semicolon, ';'),
 
     _exp: $ => choice(
+      $.let,
+      $.use,
       $.identifier,
       $.binary_exp,
       $.unary_exp,
       $.if,
       $._fn,
+      $.for,
       $.loop,
       $.assignment,
       seq('(', $._exp, ')'),
@@ -84,16 +79,7 @@ module.exports = grammar({
 
     if: $ => seq('if', $._exp, $.block, optional(seq('else', $.block))),
 
-    _fn: $ => choice(
-      seq('fn', $.lambda),
-      $.named_fn,
-    ),
-
-    named_fn: $ => seq(
-      'fn',
-      field('identifier', $.identifier),
-      $.lambda,
-    ),
+    _fn: $ => seq('fn', $.lambda),
 
     lambda: $ => seq(
       '(',
@@ -105,6 +91,14 @@ module.exports = grammar({
 
     loop: $ => seq('loop', $.block),
 
+    for: $ => seq(
+      'for',
+      field('identifier', $.identifier),
+      'of',
+      field('iterator', $._exp),
+      $.block,
+    ),
+
     list: $ => seq('[', sep($._exp, ','), ']'),
 
     object: $ => prec(1, seq('{', sep(seq($.identifier, ':', $._exp), ','), '}')),
@@ -112,8 +106,8 @@ module.exports = grammar({
     map: $ => seq('{', sep(seq($._exp, ':', $._exp), ','), '}'),
 
     assignment: $ => prec.right(choice(
-      seq($.identifier, '=', $._exp),
-      seq($.index_exp, '=', $._exp),
+      seq($.identifier, ':=', $._exp),
+      seq($.index_exp, ':=', $._exp),
     )),
 
     binary_exp: $ => choice(
@@ -157,7 +151,7 @@ module.exports = grammar({
 
     null: () => 'null',
 
-    // Here we tolerate unescaped newlines in string literals.
+    // FIXME: Here we tolerate unescaped newlines in string literals.
     string: $ => seq(
       '"',
       repeat(choice(

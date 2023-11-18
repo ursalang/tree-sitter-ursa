@@ -36,6 +36,10 @@
           "named": true
         },
         {
+          "type": "for",
+          "named": true
+        },
+        {
           "type": "identifier",
           "named": true
         },
@@ -52,6 +56,10 @@
           "named": true
         },
         {
+          "type": "let",
+          "named": true
+        },
+        {
           "type": "list",
           "named": true
         },
@@ -61,10 +69,6 @@
         },
         {
           "type": "map",
-          "named": true
-        },
-        {
-          "type": "named_fn",
           "named": true
         },
         {
@@ -93,6 +97,10 @@
         },
         {
           "type": "unary_exp",
+          "named": true
+        },
+        {
+          "type": "use",
           "named": true
         }
       ]
@@ -135,6 +143,10 @@
           "named": true
         },
         {
+          "type": "for",
+          "named": true
+        },
+        {
           "type": "identifier",
           "named": true
         },
@@ -151,6 +163,10 @@
           "named": true
         },
         {
+          "type": "let",
+          "named": true
+        },
+        {
           "type": "list",
           "named": true
         },
@@ -160,10 +176,6 @@
         },
         {
           "type": "map",
-          "named": true
-        },
-        {
-          "type": "named_fn",
           "named": true
         },
         {
@@ -192,6 +204,10 @@
         },
         {
           "type": "unary_exp",
+          "named": true
+        },
+        {
+          "type": "use",
           "named": true
         }
       ]
@@ -234,6 +250,10 @@
           "named": true
         },
         {
+          "type": "for",
+          "named": true
+        },
+        {
           "type": "identifier",
           "named": true
         },
@@ -263,10 +283,6 @@
         },
         {
           "type": "map",
-          "named": true
-        },
-        {
-          "type": "named_fn",
           "named": true
         },
         {
@@ -346,6 +362,10 @@
           "named": true
         },
         {
+          "type": "for",
+          "named": true
+        },
+        {
           "type": "identifier",
           "named": true
         },
@@ -362,6 +382,10 @@
           "named": true
         },
         {
+          "type": "let",
+          "named": true
+        },
+        {
           "type": "list",
           "named": true
         },
@@ -371,10 +395,6 @@
         },
         {
           "type": "map",
-          "named": true
-        },
-        {
-          "type": "named_fn",
           "named": true
         },
         {
@@ -403,6 +423,10 @@
         },
         {
           "type": "unary_exp",
+          "named": true
+        },
+        {
+          "type": "use",
           "named": true
         }
       ]
@@ -457,6 +481,10 @@
             "named": false
           },
           {
+            "type": "for",
+            "named": true
+          },
+          {
             "type": "identifier",
             "named": true
           },
@@ -473,6 +501,10 @@
             "named": true
           },
           {
+            "type": "let",
+            "named": true
+          },
+          {
             "type": "list",
             "named": true
           },
@@ -482,10 +514,6 @@
           },
           {
             "type": "map",
-            "named": true
-          },
-          {
-            "type": "named_fn",
             "named": true
           },
           {
@@ -514,6 +542,10 @@
           },
           {
             "type": "unary_exp",
+            "named": true
+          },
+          {
+            "type": "use",
             "named": true
           }
         ]
@@ -552,6 +584,10 @@
           "named": true
         },
         {
+          "type": "for",
+          "named": true
+        },
+        {
           "type": "identifier",
           "named": true
         },
@@ -568,6 +604,10 @@
           "named": true
         },
         {
+          "type": "let",
+          "named": true
+        },
+        {
           "type": "list",
           "named": true
         },
@@ -577,10 +617,6 @@
         },
         {
           "type": "map",
-          "named": true
-        },
-        {
-          "type": "named_fn",
           "named": true
         },
         {
@@ -610,234 +646,21 @@
         {
           "type": "unary_exp",
           "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "if",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "assignment",
-          "named": true
         },
         {
-          "type": "binary_exp",
-          "named": true
-        },
-        {
-          "type": "block",
-          "named": true
-        },
-        {
-          "type": "bool",
-          "named": true
-        },
-        {
-          "type": "break",
-          "named": true
-        },
-        {
-          "type": "call",
-          "named": true
-        },
-        {
-          "type": "continue",
-          "named": true
-        },
-        {
-          "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "if",
-          "named": true
-        },
-        {
-          "type": "index_exp",
-          "named": true
-        },
-        {
-          "type": "lambda",
-          "named": true
-        },
-        {
-          "type": "list",
-          "named": true
-        },
-        {
-          "type": "loop",
-          "named": true
-        },
-        {
-          "type": "map",
-          "named": true
-        },
-        {
-          "type": "named_fn",
-          "named": true
-        },
-        {
-          "type": "null",
-          "named": true
-        },
-        {
-          "type": "number",
-          "named": true
-        },
-        {
-          "type": "object",
-          "named": true
-        },
-        {
-          "type": "property_exp",
-          "named": true
-        },
-        {
-          "type": "return",
-          "named": true
-        },
-        {
-          "type": "string",
-          "named": true
-        },
-        {
-          "type": "unary_exp",
+          "type": "use",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "index_exp",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "assignment",
-          "named": true
-        },
-        {
-          "type": "binary_exp",
-          "named": true
-        },
-        {
-          "type": "block",
-          "named": true
-        },
-        {
-          "type": "bool",
-          "named": true
-        },
-        {
-          "type": "break",
-          "named": true
-        },
-        {
-          "type": "call",
-          "named": true
-        },
-        {
-          "type": "continue",
-          "named": true
-        },
-        {
-          "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "if",
-          "named": true
-        },
-        {
-          "type": "index_exp",
-          "named": true
-        },
-        {
-          "type": "lambda",
-          "named": true
-        },
-        {
-          "type": "list",
-          "named": true
-        },
-        {
-          "type": "loop",
-          "named": true
-        },
-        {
-          "type": "map",
-          "named": true
-        },
-        {
-          "type": "named_fn",
-          "named": true
-        },
-        {
-          "type": "null",
-          "named": true
-        },
-        {
-          "type": "number",
-          "named": true
-        },
-        {
-          "type": "object",
-          "named": true
-        },
-        {
-          "type": "property_exp",
-          "named": true
-        },
-        {
-          "type": "return",
-          "named": true
-        },
-        {
-          "type": "string",
-          "named": true
-        },
-        {
-          "type": "unary_exp",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "lambda",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "block",
-          "named": true
-        },
-        {
-          "type": "identifier",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "let",
+    "type": "for",
     "named": true,
     "fields": {
       "identifier": {
         "multiple": false,
-        "required": false,
+        "required": true,
         "types": [
           {
             "type": "identifier",
@@ -845,9 +668,9 @@
           }
         ]
       },
-      "value": {
+      "iterator": {
         "multiple": true,
-        "required": false,
+        "required": true,
         "types": [
           {
             "type": "(",
@@ -890,6 +713,10 @@
             "named": false
           },
           {
+            "type": "for",
+            "named": true
+          },
+          {
             "type": "identifier",
             "named": true
           },
@@ -906,6 +733,10 @@
             "named": true
           },
           {
+            "type": "let",
+            "named": true
+          },
+          {
             "type": "list",
             "named": true
           },
@@ -915,10 +746,6 @@
           },
           {
             "type": "map",
-            "named": true
-          },
-          {
-            "type": "named_fn",
             "named": true
           },
           {
@@ -948,19 +775,386 @@
           {
             "type": "unary_exp",
             "named": true
+          },
+          {
+            "type": "use",
+            "named": true
           }
         ]
       }
     },
     "children": {
       "multiple": false,
-      "required": false,
+      "required": true,
       "types": [
         {
-          "type": "named_fn",
+          "type": "block",
           "named": true
         }
       ]
+    }
+  },
+  {
+    "type": "if",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "assignment",
+          "named": true
+        },
+        {
+          "type": "binary_exp",
+          "named": true
+        },
+        {
+          "type": "block",
+          "named": true
+        },
+        {
+          "type": "bool",
+          "named": true
+        },
+        {
+          "type": "break",
+          "named": true
+        },
+        {
+          "type": "call",
+          "named": true
+        },
+        {
+          "type": "continue",
+          "named": true
+        },
+        {
+          "type": "for",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "if",
+          "named": true
+        },
+        {
+          "type": "index_exp",
+          "named": true
+        },
+        {
+          "type": "lambda",
+          "named": true
+        },
+        {
+          "type": "let",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "loop",
+          "named": true
+        },
+        {
+          "type": "map",
+          "named": true
+        },
+        {
+          "type": "null",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "object",
+          "named": true
+        },
+        {
+          "type": "property_exp",
+          "named": true
+        },
+        {
+          "type": "return",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "unary_exp",
+          "named": true
+        },
+        {
+          "type": "use",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "index_exp",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "assignment",
+          "named": true
+        },
+        {
+          "type": "binary_exp",
+          "named": true
+        },
+        {
+          "type": "block",
+          "named": true
+        },
+        {
+          "type": "bool",
+          "named": true
+        },
+        {
+          "type": "break",
+          "named": true
+        },
+        {
+          "type": "call",
+          "named": true
+        },
+        {
+          "type": "continue",
+          "named": true
+        },
+        {
+          "type": "for",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "if",
+          "named": true
+        },
+        {
+          "type": "index_exp",
+          "named": true
+        },
+        {
+          "type": "lambda",
+          "named": true
+        },
+        {
+          "type": "let",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "loop",
+          "named": true
+        },
+        {
+          "type": "map",
+          "named": true
+        },
+        {
+          "type": "null",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "object",
+          "named": true
+        },
+        {
+          "type": "property_exp",
+          "named": true
+        },
+        {
+          "type": "return",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "unary_exp",
+          "named": true
+        },
+        {
+          "type": "use",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "lambda",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "block",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "let",
+    "named": true,
+    "fields": {
+      "identifier": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "assignment",
+            "named": true
+          },
+          {
+            "type": "binary_exp",
+            "named": true
+          },
+          {
+            "type": "block",
+            "named": true
+          },
+          {
+            "type": "bool",
+            "named": true
+          },
+          {
+            "type": "break",
+            "named": true
+          },
+          {
+            "type": "call",
+            "named": true
+          },
+          {
+            "type": "continue",
+            "named": true
+          },
+          {
+            "type": "fn",
+            "named": false
+          },
+          {
+            "type": "for",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "index_exp",
+            "named": true
+          },
+          {
+            "type": "lambda",
+            "named": true
+          },
+          {
+            "type": "let",
+            "named": true
+          },
+          {
+            "type": "list",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "map",
+            "named": true
+          },
+          {
+            "type": "null",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "object",
+            "named": true
+          },
+          {
+            "type": "property_exp",
+            "named": true
+          },
+          {
+            "type": "return",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "unary_exp",
+            "named": true
+          },
+          {
+            "type": "use",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {
@@ -1000,6 +1194,10 @@
           "named": true
         },
         {
+          "type": "for",
+          "named": true
+        },
+        {
           "type": "identifier",
           "named": true
         },
@@ -1016,6 +1214,10 @@
           "named": true
         },
         {
+          "type": "let",
+          "named": true
+        },
+        {
           "type": "list",
           "named": true
         },
@@ -1025,10 +1227,6 @@
         },
         {
           "type": "map",
-          "named": true
-        },
-        {
-          "type": "named_fn",
           "named": true
         },
         {
@@ -1057,6 +1255,10 @@
         },
         {
           "type": "unary_exp",
+          "named": true
+        },
+        {
+          "type": "use",
           "named": true
         }
       ]
@@ -1114,6 +1316,10 @@
           "named": true
         },
         {
+          "type": "for",
+          "named": true
+        },
+        {
           "type": "identifier",
           "named": true
         },
@@ -1130,6 +1336,10 @@
           "named": true
         },
         {
+          "type": "let",
+          "named": true
+        },
+        {
           "type": "list",
           "named": true
         },
@@ -1139,10 +1349,6 @@
         },
         {
           "type": "map",
-          "named": true
-        },
-        {
-          "type": "named_fn",
           "named": true
         },
         {
@@ -1171,6 +1377,10 @@
         },
         {
           "type": "unary_exp",
+          "named": true
+        },
+        {
+          "type": "use",
           "named": true
         }
       ]
@@ -1213,6 +1423,10 @@
           "named": true
         },
         {
+          "type": "for",
+          "named": true
+        },
+        {
           "type": "identifier",
           "named": true
         },
@@ -1249,10 +1463,6 @@
           "named": true
         },
         {
-          "type": "named_fn",
-          "named": true
-        },
-        {
           "type": "null",
           "named": true
         },
@@ -1282,32 +1492,6 @@
         },
         {
           "type": "use",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "named_fn",
-    "named": true,
-    "fields": {
-      "identifier": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "identifier",
-            "named": true
-          }
-        ]
-      }
-    },
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "lambda",
           "named": true
         }
       ]
@@ -1350,6 +1534,10 @@
           "named": true
         },
         {
+          "type": "for",
+          "named": true
+        },
+        {
           "type": "identifier",
           "named": true
         },
@@ -1366,6 +1554,10 @@
           "named": true
         },
         {
+          "type": "let",
+          "named": true
+        },
+        {
           "type": "list",
           "named": true
         },
@@ -1375,10 +1567,6 @@
         },
         {
           "type": "map",
-          "named": true
-        },
-        {
-          "type": "named_fn",
           "named": true
         },
         {
@@ -1407,6 +1595,10 @@
         },
         {
           "type": "unary_exp",
+          "named": true
+        },
+        {
+          "type": "use",
           "named": true
         }
       ]
@@ -1449,6 +1641,10 @@
           "named": true
         },
         {
+          "type": "for",
+          "named": true
+        },
+        {
           "type": "identifier",
           "named": true
         },
@@ -1465,6 +1661,10 @@
           "named": true
         },
         {
+          "type": "let",
+          "named": true
+        },
+        {
           "type": "list",
           "named": true
         },
@@ -1474,10 +1674,6 @@
         },
         {
           "type": "map",
-          "named": true
-        },
-        {
-          "type": "named_fn",
           "named": true
         },
         {
@@ -1510,6 +1706,10 @@
         },
         {
           "type": "unary_exp",
+          "named": true
+        },
+        {
+          "type": "use",
           "named": true
         }
       ]
@@ -1552,6 +1752,10 @@
           "named": true
         },
         {
+          "type": "for",
+          "named": true
+        },
+        {
           "type": "identifier",
           "named": true
         },
@@ -1568,6 +1772,10 @@
           "named": true
         },
         {
+          "type": "let",
+          "named": true
+        },
+        {
           "type": "list",
           "named": true
         },
@@ -1577,10 +1785,6 @@
         },
         {
           "type": "map",
-          "named": true
-        },
-        {
-          "type": "named_fn",
           "named": true
         },
         {
@@ -1609,6 +1813,10 @@
         },
         {
           "type": "unary_exp",
+          "named": true
+        },
+        {
+          "type": "use",
           "named": true
         }
       ]
@@ -1656,6 +1864,10 @@
           "named": true
         },
         {
+          "type": "for",
+          "named": true
+        },
+        {
           "type": "identifier",
           "named": true
         },
@@ -1672,6 +1884,10 @@
           "named": true
         },
         {
+          "type": "let",
+          "named": true
+        },
+        {
           "type": "list",
           "named": true
         },
@@ -1681,10 +1897,6 @@
         },
         {
           "type": "map",
-          "named": true
-        },
-        {
-          "type": "named_fn",
           "named": true
         },
         {
@@ -1713,6 +1925,10 @@
         },
         {
           "type": "unary_exp",
+          "named": true
+        },
+        {
+          "type": "use",
           "named": true
         }
       ]
@@ -1786,6 +2002,10 @@
     "named": false
   },
   {
+    "type": ":=",
+    "named": false
+  },
+  {
     "type": ";",
     "named": false
   },
@@ -1850,6 +2070,10 @@
     "named": false
   },
   {
+    "type": "for",
+    "named": false
+  },
+  {
     "type": "identifier",
     "named": true
   },
@@ -1880,6 +2104,10 @@
   {
     "type": "number",
     "named": true
+  },
+  {
+    "type": "of",
+    "named": false
   },
   {
     "type": "or",

@@ -12,9 +12,6 @@
 ; Function definitions
 ;---------------------
 
-(named_fn
-  (identifier) @function)
-
 (let
   (identifier) @function (lambda))
 
@@ -91,16 +88,18 @@
 ] @punctuation.bracket
 
 [
+  "and"
   "break"
   (continue)
   "else"
+  "for"
   "fn"
   "if"
   "let"
   "loop"
+  "not"
+  "of"
+  "or"
   "return"
   "use"
-  "and"
-  "or"
-  "not"
 ] @keyword

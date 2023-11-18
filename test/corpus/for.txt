@@ -1,0 +1,16 @@
+=========
+For loops
+=========
+
+for x of l.iterator() {
+    tot := tot + x
+}
+
+---
+
+(module
+    (for (identifier)
+         (call (property_exp (identifier) (property_identifier)))
+         (block (assignment
+             (identifier)
+             (binary_exp (identifier) (identifier))))))
