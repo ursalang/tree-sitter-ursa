@@ -12,3 +12,4 @@ git ci -m "Bump Cargo version to $VERSION" Cargo.toml && git push
 npm version $VERSION
 npm publish
 cargo publish
+git push
