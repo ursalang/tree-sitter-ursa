@@ -101,7 +101,7 @@ module.exports = grammar({
 
     list: $ => seq('[', sep($._exp, ','), ']'),
 
-    object: $ => prec(1, seq('{', sep(seq($.identifier, ':', $._exp), ','), '}')),
+    object: $ => prec(1, seq('{', sep(seq($.identifier, '=', $._exp), ','), '}')),
 
     map: $ => seq('{', sep(seq($._exp, ':', $._exp), ','), '}'),
 
