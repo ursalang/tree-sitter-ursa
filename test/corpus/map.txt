@@ -2,12 +2,16 @@
 Maps
 ====
 
+{};
+{,};
 {"a": 1, "b": 2 + 0, 3: 4};
 let t = {"a": 1, "b": 2 + 0, 3: 4}; t["b"] := 1; t
 
 ---
 
 (module
+    (map)
+    (map)
     (map
         (string) (number)
         (string) (binary_exp (number) (number))

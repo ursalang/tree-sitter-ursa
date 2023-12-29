@@ -61,8 +61,8 @@ module.exports = grammar({
       $.index_exp,
       $.property_exp,
       $.list,
-      $.object,
       $.map,
+      $.object,
       $.break,
       $.return,
       $.continue,
@@ -99,11 +99,15 @@ module.exports = grammar({
       $.block,
     ),
 
-    list: $ => seq('[', sep($._exp, ','), ']'),
+    list: $ => seq('[', sep($._exp, ','), optional(','), ']'),
 
-    object: $ => prec(1, seq('{', sep(seq($.identifier, '=', $._exp), ','), '}')),
+    map: $ => prec(2, seq('{', sep(seq($._exp, ':', $._exp), ','), optional(','), '}')),
 
-    map: $ => seq('{', sep(seq($._exp, ':', $._exp), ','), '}'),
+    // This rule is complicated by the need not to match `{}` (which is any empty map).
+    // Match an object with at least one assignment, or containing just `;`, or containing a newline.
+    // We do not match $._sc because external symbols are matched preferentially, and that would mean
+    // we could not use precedence to force `map` to be preferred to `object`.
+    object: $ => prec(1, seq('{', choice(sep1(seq($.identifier, '=', $._exp), $._sc), ';', '\n'), $._sc, '}')),
 
     assignment: $ => prec.right(choice(
       seq($.identifier, ':=', $._exp),
