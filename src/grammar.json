@@ -271,10 +271,6 @@
         },
         {
           "type": "SYMBOL",
-          "name": "index_exp"
-        },
-        {
-          "type": "SYMBOL",
           "name": "property_exp"
         },
         {
@@ -767,41 +763,19 @@
       "type": "PREC_RIGHT",
       "value": 0,
       "content": {
-        "type": "CHOICE",
+        "type": "SEQ",
         "members": [
           {
-            "type": "SEQ",
-            "members": [
-              {
-                "type": "SYMBOL",
-                "name": "identifier"
-              },
-              {
-                "type": "STRING",
-                "value": ":="
-              },
-              {
-                "type": "SYMBOL",
-                "name": "_exp"
-              }
-            ]
+            "type": "SYMBOL",
+            "name": "identifier"
           },
           {
-            "type": "SEQ",
-            "members": [
-              {
-                "type": "SYMBOL",
-                "name": "index_exp"
-              },
-              {
-                "type": "STRING",
-                "value": ":="
-              },
-              {
-                "type": "SYMBOL",
-                "name": "_exp"
-              }
-            ]
+            "type": "STRING",
+            "value": ":="
+          },
+          {
+            "type": "SYMBOL",
+            "name": "_exp"
           }
         ]
       }
@@ -1160,31 +1134,6 @@
           }
         }
       ]
-    },
-    "index_exp": {
-      "type": "PREC_RIGHT",
-      "value": 8,
-      "content": {
-        "type": "SEQ",
-        "members": [
-          {
-            "type": "SYMBOL",
-            "name": "_exp"
-          },
-          {
-            "type": "STRING",
-            "value": "["
-          },
-          {
-            "type": "SYMBOL",
-            "name": "_exp"
-          },
-          {
-            "type": "STRING",
-            "value": "]"
-          }
-        ]
-      }
     },
     "call": {
       "type": "PREC_LEFT",

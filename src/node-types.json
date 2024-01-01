@@ -48,10 +48,6 @@
           "named": true
         },
         {
-          "type": "index_exp",
-          "named": true
-        },
-        {
           "type": "lambda",
           "named": true
         },
@@ -155,10 +151,6 @@
           "named": true
         },
         {
-          "type": "index_exp",
-          "named": true
-        },
-        {
           "type": "lambda",
           "named": true
         },
@@ -259,10 +251,6 @@
         },
         {
           "type": "if",
-          "named": true
-        },
-        {
-          "type": "index_exp",
           "named": true
         },
         {
@@ -371,10 +359,6 @@
         },
         {
           "type": "if",
-          "named": true
-        },
-        {
-          "type": "index_exp",
           "named": true
         },
         {
@@ -493,10 +477,6 @@
             "named": true
           },
           {
-            "type": "index_exp",
-            "named": true
-          },
-          {
             "type": "lambda",
             "named": true
           },
@@ -593,10 +573,6 @@
         },
         {
           "type": "if",
-          "named": true
-        },
-        {
-          "type": "index_exp",
           "named": true
         },
         {
@@ -725,10 +701,6 @@
             "named": true
           },
           {
-            "type": "index_exp",
-            "named": true
-          },
-          {
             "type": "lambda",
             "named": true
           },
@@ -840,117 +812,6 @@
         },
         {
           "type": "if",
-          "named": true
-        },
-        {
-          "type": "index_exp",
-          "named": true
-        },
-        {
-          "type": "lambda",
-          "named": true
-        },
-        {
-          "type": "let",
-          "named": true
-        },
-        {
-          "type": "list",
-          "named": true
-        },
-        {
-          "type": "loop",
-          "named": true
-        },
-        {
-          "type": "map",
-          "named": true
-        },
-        {
-          "type": "null",
-          "named": true
-        },
-        {
-          "type": "number",
-          "named": true
-        },
-        {
-          "type": "object",
-          "named": true
-        },
-        {
-          "type": "property_exp",
-          "named": true
-        },
-        {
-          "type": "return",
-          "named": true
-        },
-        {
-          "type": "string",
-          "named": true
-        },
-        {
-          "type": "unary_exp",
-          "named": true
-        },
-        {
-          "type": "use",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "index_exp",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "assignment",
-          "named": true
-        },
-        {
-          "type": "binary_exp",
-          "named": true
-        },
-        {
-          "type": "block",
-          "named": true
-        },
-        {
-          "type": "bool",
-          "named": true
-        },
-        {
-          "type": "break",
-          "named": true
-        },
-        {
-          "type": "call",
-          "named": true
-        },
-        {
-          "type": "continue",
-          "named": true
-        },
-        {
-          "type": "for",
-          "named": true
-        },
-        {
-          "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "if",
-          "named": true
-        },
-        {
-          "type": "index_exp",
           "named": true
         },
         {
@@ -1098,10 +959,6 @@
             "named": true
           },
           {
-            "type": "index_exp",
-            "named": true
-          },
-          {
             "type": "lambda",
             "named": true
           },
@@ -1203,10 +1060,6 @@
         },
         {
           "type": "if",
-          "named": true
-        },
-        {
-          "type": "index_exp",
           "named": true
         },
         {
@@ -1328,10 +1181,6 @@
           "named": true
         },
         {
-          "type": "index_exp",
-          "named": true
-        },
-        {
           "type": "lambda",
           "named": true
         },
@@ -1432,10 +1281,6 @@
         },
         {
           "type": "if",
-          "named": true
-        },
-        {
-          "type": "index_exp",
           "named": true
         },
         {
@@ -1546,10 +1391,6 @@
           "named": true
         },
         {
-          "type": "index_exp",
-          "named": true
-        },
-        {
           "type": "lambda",
           "named": true
         },
@@ -1650,10 +1491,6 @@
         },
         {
           "type": "if",
-          "named": true
-        },
-        {
-          "type": "index_exp",
           "named": true
         },
         {
@@ -1764,10 +1601,6 @@
           "named": true
         },
         {
-          "type": "index_exp",
-          "named": true
-        },
-        {
           "type": "lambda",
           "named": true
         },
@@ -1873,10 +1706,6 @@
         },
         {
           "type": "if",
-          "named": true
-        },
-        {
-          "type": "index_exp",
           "named": true
         },
         {

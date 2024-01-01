@@ -3,12 +3,10 @@ Lists
 =====
 
 [1, 2, 3];
-[1, 2, 3].length;
-[1, 2, 3][1]
+[1, 2, 3].length
 
 ---
 
 (module
     (list (number) (number) (number))
-    (property_exp (list (number) (number) (number)) (property_identifier))
-    (index_exp (list (number) (number) (number)) (number)))
+    (property_exp (list (number) (number) (number)) (property_identifier)))

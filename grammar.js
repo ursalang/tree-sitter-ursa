@@ -58,7 +58,6 @@ module.exports = grammar({
       seq('(', $._exp, ')'),
       $.block,
       $.call,
-      $.index_exp,
       $.property_exp,
       $.list,
       $.map,
@@ -109,10 +108,7 @@ module.exports = grammar({
     // we could not use precedence to force `map` to be preferred to `object`.
     object: $ => prec(1, seq('{', choice(sep1(seq($.identifier, '=', $._exp), $._sc), ';', '\n'), $._sc, '}')),
 
-    assignment: $ => prec.right(choice(
-      seq($.identifier, ':=', $._exp),
-      seq($.index_exp, ':=', $._exp),
-    )),
+    assignment: $ => prec.right(seq($.identifier, ':=', $._exp)),
 
     binary_exp: $ => choice(
       prec.left(1, seq($._exp, 'or', $._exp)),
@@ -136,8 +132,6 @@ module.exports = grammar({
       prec.left(7, seq('+', $._exp)),
       prec.left(7, seq('-', $._exp)),
     ),
-
-    index_exp: $ => prec.right(8, seq($._exp, '[', $._exp, ']')),
 
     call: $ => prec.left(9, seq(field('function', $._exp), '(', sep($._exp, ','), ')')),
 
