@@ -65,6 +65,9 @@ module.exports = grammar({
       $.break,
       $.return,
       $.continue,
+      $.await,
+      $.launch,
+      $.yield,
       $.null,
       $.bool,
       $.string,
@@ -75,6 +78,10 @@ module.exports = grammar({
     continue: () => 'continue',
 
     return: $ => prec.right(seq('return', optional($._exp))),
+
+    await: $ => prec.right(seq('await', $._exp)),
+    launch: $ => prec.right(seq('launch', $._exp)),
+    yield: $ => prec.right(seq('yield', optional($._exp))),
 
     if: $ => seq('if', $._exp, $.block, optional(seq('else', $.block))),
 
