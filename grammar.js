@@ -85,7 +85,7 @@ module.exports = grammar({
 
     if: $ => seq('if', $._exp, $.block, optional(seq('else', $.block))),
 
-    _fn: $ => seq('fn', $.lambda),
+    _fn: $ => seq(choice('fn', 'gen'), $.lambda),
 
     lambda: $ => seq(
       '(',

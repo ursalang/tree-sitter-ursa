@@ -636,6 +636,10 @@
             "named": true
           },
           {
+            "type": "gen",
+            "named": false
+          },
+          {
             "type": "identifier",
             "named": true
           },
@@ -882,6 +886,10 @@
           {
             "type": "for",
             "named": true
+          },
+          {
+            "type": "gen",
+            "named": false
           },
           {
             "type": "identifier",
@@ -1279,6 +1287,10 @@
           {
             "type": "for",
             "named": true
+          },
+          {
+            "type": "gen",
+            "named": false
           },
           {
             "type": "identifier",
@@ -2445,6 +2457,10 @@
   },
   {
     "type": "for",
+    "named": false
+  },
+  {
+    "type": "gen",
     "named": false
   },
   {
