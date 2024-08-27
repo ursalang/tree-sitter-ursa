@@ -35,7 +35,7 @@ module.exports = grammar({
     block: $ => seq('{', optional($._sequence), '}'),
 
     let: $ => seq(
-      'let',
+      choice('let', 'var'),
       field('identifier', $.identifier),
       '=',
       field('value', $._exp)

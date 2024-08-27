@@ -3,8 +3,10 @@ Let expressions
 ===============
 
 let a = x;
+var b = y;
 
 ---
 
 (module
+    (let (identifier) (identifier))
     (let (identifier) (identifier)))
