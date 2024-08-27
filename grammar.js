@@ -1,10 +1,11 @@
 /**
  * Tree-sitter grammar for Ursa
- * © 2023 Reuben Thomas
+ * © 2023-2024 Reuben Thomas
  * It is distributed under the ISC licence.
  */
 
-// The reference grammar is https://github.com/ursalang/ohm-grammar
+// The reference grammar is:
+// https://github.com/ursalang/ursa/blob/main/src/grammar/ursa.ohm
 
 module.exports = grammar({
   name: 'ursa',
@@ -113,7 +114,12 @@ module.exports = grammar({
     // Match an object with at least one assignment, or containing just `;`, or containing a newline.
     // We do not match $._sc because external symbols are matched preferentially, and that would mean
     // we could not use precedence to force `map` to be preferred to `object`.
-    object: $ => prec(1, seq('{', choice(sep1(seq($.identifier, '=', $._exp), $._sc), ';', '\n'), $._sc, '}')),
+    object: $ => prec(1,
+      choice(
+        seq('{', sep1(seq($.identifier, '=', $._exp), $._sc), $._sc, '}'),
+        seq('{', ';', '}'),
+      ),
+    ),
 
     assignment: $ => prec.right(seq($.identifier, ':=', $._exp)),
 

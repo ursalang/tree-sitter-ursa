@@ -5,6 +5,10 @@ Objects
 {;};
 {a = 1}
 {a = 1; b = "hello"}
+{
+  a = 1;
+  b = "hello";
+}
 
 ---
 
@@ -12,6 +16,9 @@ Objects
     (object)
     (object
         (identifier) (number))
+    (object
+        (identifier) (number)
+        (identifier) (string))
     (object
         (identifier) (number)
         (identifier) (string)))

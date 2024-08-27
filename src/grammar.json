@@ -758,15 +758,15 @@
       "type": "PREC",
       "value": 1,
       "content": {
-        "type": "SEQ",
+        "type": "CHOICE",
         "members": [
           {
-            "type": "STRING",
-            "value": "{"
-          },
-          {
-            "type": "CHOICE",
+            "type": "SEQ",
             "members": [
+              {
+                "type": "STRING",
+                "value": "{"
+              },
               {
                 "type": "SEQ",
                 "members": [
@@ -819,22 +819,31 @@
                 ]
               },
               {
+                "type": "SYMBOL",
+                "name": "_sc"
+              },
+              {
+                "type": "STRING",
+                "value": "}"
+              }
+            ]
+          },
+          {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "STRING",
+                "value": "{"
+              },
+              {
                 "type": "STRING",
                 "value": ";"
               },
               {
                 "type": "STRING",
-                "value": "\n"
+                "value": "}"
               }
             ]
-          },
-          {
-            "type": "SYMBOL",
-            "name": "_sc"
-          },
-          {
-            "type": "STRING",
-            "value": "}"
           }
         ]
       }
