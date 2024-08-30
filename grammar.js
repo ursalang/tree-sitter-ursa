@@ -124,19 +124,10 @@ module.exports = grammar({
     assignment: $ => prec.right(seq($.identifier, ':=', $._exp)),
 
     binary_exp: $ => choice(
-      prec.left(1, seq($._exp, 'or', $._exp)),
-      prec.left(1, seq($._exp, 'and', $._exp)),
-      prec.left(2, seq($._exp, '==', $._exp)),
-      prec.left(2, seq($._exp, '!=', $._exp)),
-      prec.left(2, seq($._exp, '<', $._exp)),
-      prec.left(2, seq($._exp, '<=', $._exp)),
-      prec.left(2, seq($._exp, '>', $._exp)),
-      prec.left(2, seq($._exp, '>=', $._exp)),
-      prec.left(3, seq($._exp, '+', $._exp)),
-      prec.left(3, seq($._exp, '-', $._exp)),
-      prec.left(4, seq($._exp, '*', $._exp)),
-      prec.left(4, seq($._exp, '/', $._exp)),
-      prec.left(4, seq($._exp, '%', $._exp)),
+      prec.left(1, seq($._exp, choice('or', 'and'), $._exp)),
+      prec.left(2, seq($._exp, choice('==', '!=', '<', '<=', '>', '>='), $._exp)),
+      prec.left(3, seq($._exp, choice('+', '-'), $._exp)),
+      prec.left(4, seq($._exp, choice('*', '/', '%'), $._exp)),
       prec.left(5, seq($._exp, '**', $._exp)),
     ),
 
