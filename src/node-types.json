@@ -2468,6 +2468,10 @@
     "named": false
   },
   {
+    "type": "in",
+    "named": false
+  },
+  {
     "type": "launch",
     "named": false
   },
@@ -2494,10 +2498,6 @@
   {
     "type": "number",
     "named": true
-  },
-  {
-    "type": "of",
-    "named": false
   },
   {
     "type": "or",

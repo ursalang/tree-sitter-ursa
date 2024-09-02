@@ -2,7 +2,7 @@
 For loops
 =========
 
-for x of l.iterator() {
+for x in l.iterator() {
     tot := tot + x
 }
 
