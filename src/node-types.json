@@ -40,6 +40,10 @@
           "named": true
         },
         {
+          "type": "fn",
+          "named": true
+        },
+        {
           "type": "for",
           "named": true
         },
@@ -49,10 +53,6 @@
         },
         {
           "type": "if",
-          "named": true
-        },
-        {
-          "type": "lambda",
           "named": true
         },
         {
@@ -155,6 +155,10 @@
           "named": true
         },
         {
+          "type": "fn",
+          "named": true
+        },
+        {
           "type": "for",
           "named": true
         },
@@ -164,10 +168,6 @@
         },
         {
           "type": "if",
-          "named": true
-        },
-        {
-          "type": "lambda",
           "named": true
         },
         {
@@ -270,6 +270,10 @@
           "named": true
         },
         {
+          "type": "fn",
+          "named": true
+        },
+        {
           "type": "for",
           "named": true
         },
@@ -279,10 +283,6 @@
         },
         {
           "type": "if",
-          "named": true
-        },
-        {
-          "type": "lambda",
           "named": true
         },
         {
@@ -385,6 +385,10 @@
           "named": true
         },
         {
+          "type": "fn",
+          "named": true
+        },
+        {
           "type": "for",
           "named": true
         },
@@ -394,10 +398,6 @@
         },
         {
           "type": "if",
-          "named": true
-        },
-        {
-          "type": "lambda",
           "named": true
         },
         {
@@ -505,6 +505,10 @@
           "named": true
         },
         {
+          "type": "fn",
+          "named": true
+        },
+        {
           "type": "for",
           "named": true
         },
@@ -514,10 +518,6 @@
         },
         {
           "type": "if",
-          "named": true
-        },
-        {
-          "type": "lambda",
           "named": true
         },
         {
@@ -629,15 +629,11 @@
           },
           {
             "type": "fn",
-            "named": false
+            "named": true
           },
           {
             "type": "for",
             "named": true
-          },
-          {
-            "type": "gen",
-            "named": false
           },
           {
             "type": "identifier",
@@ -645,10 +641,6 @@
           },
           {
             "type": "if",
-            "named": true
-          },
-          {
-            "type": "lambda",
             "named": true
           },
           {
@@ -747,6 +739,10 @@
           "named": true
         },
         {
+          "type": "fn",
+          "named": true
+        },
+        {
           "type": "for",
           "named": true
         },
@@ -756,10 +752,6 @@
         },
         {
           "type": "if",
-          "named": true
-        },
-        {
-          "type": "lambda",
           "named": true
         },
         {
@@ -816,6 +808,25 @@
         },
         {
           "type": "yield",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "fn",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "block",
+          "named": true
+        },
+        {
+          "type": "params",
           "named": true
         }
       ]
@@ -881,15 +892,11 @@
           },
           {
             "type": "fn",
-            "named": false
+            "named": true
           },
           {
             "type": "for",
             "named": true
-          },
-          {
-            "type": "gen",
-            "named": false
           },
           {
             "type": "identifier",
@@ -897,10 +904,6 @@
           },
           {
             "type": "if",
-            "named": true
-          },
-          {
-            "type": "lambda",
             "named": true
           },
           {
@@ -1014,6 +1017,10 @@
           "named": true
         },
         {
+          "type": "fn",
+          "named": true
+        },
+        {
           "type": "for",
           "named": true
         },
@@ -1023,10 +1030,6 @@
         },
         {
           "type": "if",
-          "named": true
-        },
-        {
-          "type": "lambda",
           "named": true
         },
         {
@@ -1089,25 +1092,6 @@
     }
   },
   {
-    "type": "lambda",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "block",
-          "named": true
-        },
-        {
-          "type": "identifier",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
     "type": "launch",
     "named": true,
     "fields": {},
@@ -1148,6 +1132,10 @@
           "named": true
         },
         {
+          "type": "fn",
+          "named": true
+        },
+        {
           "type": "for",
           "named": true
         },
@@ -1157,10 +1145,6 @@
         },
         {
           "type": "if",
-          "named": true
-        },
-        {
-          "type": "lambda",
           "named": true
         },
         {
@@ -1282,15 +1266,11 @@
           },
           {
             "type": "fn",
-            "named": false
+            "named": true
           },
           {
             "type": "for",
             "named": true
-          },
-          {
-            "type": "gen",
-            "named": false
           },
           {
             "type": "identifier",
@@ -1298,10 +1278,6 @@
           },
           {
             "type": "if",
-            "named": true
-          },
-          {
-            "type": "lambda",
             "named": true
           },
           {
@@ -1405,6 +1381,10 @@
           "named": true
         },
         {
+          "type": "fn",
+          "named": true
+        },
+        {
           "type": "for",
           "named": true
         },
@@ -1414,10 +1394,6 @@
         },
         {
           "type": "if",
-          "named": true
-        },
-        {
-          "type": "lambda",
           "named": true
         },
         {
@@ -1535,6 +1511,10 @@
           "named": true
         },
         {
+          "type": "fn",
+          "named": true
+        },
+        {
           "type": "for",
           "named": true
         },
@@ -1544,10 +1524,6 @@
         },
         {
           "type": "if",
-          "named": true
-        },
-        {
-          "type": "lambda",
           "named": true
         },
         {
@@ -1650,6 +1626,10 @@
           "named": true
         },
         {
+          "type": "fn",
+          "named": true
+        },
+        {
           "type": "for",
           "named": true
         },
@@ -1659,10 +1639,6 @@
         },
         {
           "type": "if",
-          "named": true
-        },
-        {
-          "type": "lambda",
           "named": true
         },
         {
@@ -1769,6 +1745,10 @@
           "named": true
         },
         {
+          "type": "fn",
+          "named": true
+        },
+        {
           "type": "for",
           "named": true
         },
@@ -1778,10 +1758,6 @@
         },
         {
           "type": "if",
-          "named": true
-        },
-        {
-          "type": "lambda",
           "named": true
         },
         {
@@ -1844,6 +1820,21 @@
     }
   },
   {
+    "type": "params",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "property_exp",
     "named": true,
     "fields": {},
@@ -1884,6 +1875,10 @@
           "named": true
         },
         {
+          "type": "fn",
+          "named": true
+        },
+        {
           "type": "for",
           "named": true
         },
@@ -1893,10 +1888,6 @@
         },
         {
           "type": "if",
-          "named": true
-        },
-        {
-          "type": "lambda",
           "named": true
         },
         {
@@ -2003,6 +1994,10 @@
           "named": true
         },
         {
+          "type": "fn",
+          "named": true
+        },
+        {
           "type": "for",
           "named": true
         },
@@ -2012,10 +2007,6 @@
         },
         {
           "type": "if",
-          "named": true
-        },
-        {
-          "type": "lambda",
           "named": true
         },
         {
@@ -2123,6 +2114,10 @@
           "named": true
         },
         {
+          "type": "fn",
+          "named": true
+        },
+        {
           "type": "for",
           "named": true
         },
@@ -2132,10 +2127,6 @@
         },
         {
           "type": "if",
-          "named": true
-        },
-        {
-          "type": "lambda",
           "named": true
         },
         {
@@ -2253,6 +2244,10 @@
           "named": true
         },
         {
+          "type": "fn",
+          "named": true
+        },
+        {
           "type": "for",
           "named": true
         },
@@ -2262,10 +2257,6 @@
         },
         {
           "type": "if",
-          "named": true
-        },
-        {
-          "type": "lambda",
           "named": true
         },
         {

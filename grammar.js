@@ -52,7 +52,7 @@ module.exports = grammar({
       $.binary_exp,
       $.unary_exp,
       $.if,
-      $._fn,
+      $.fn,
       $.for,
       $.loop,
       $.assignment,
@@ -86,14 +86,13 @@ module.exports = grammar({
 
     if: $ => seq('if', $._exp, $.block, optional(seq('else', $.block))),
 
-    _fn: $ => seq(choice('fn', 'gen'), $.lambda),
+    fn: $ => seq(choice('fn', 'gen'), $.params, $.block),
 
-    lambda: $ => seq(
+    params: $ => seq(
       '(',
       sep($.identifier, ','),
       optional(','),
       ')',
-      $.block,
     ),
 
     loop: $ => seq('loop', $.block),

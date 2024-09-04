@@ -239,7 +239,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_fn"
+          "name": "fn"
         },
         {
           "type": "SYMBOL",
@@ -487,7 +487,7 @@
         }
       ]
     },
-    "_fn": {
+    "fn": {
       "type": "SEQ",
       "members": [
         {
@@ -505,11 +505,15 @@
         },
         {
           "type": "SYMBOL",
-          "name": "lambda"
+          "name": "params"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "block"
         }
       ]
     },
-    "lambda": {
+    "params": {
       "type": "SEQ",
       "members": [
         {
@@ -564,10 +568,6 @@
         {
           "type": "STRING",
           "value": ")"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "block"
         }
       ]
     },

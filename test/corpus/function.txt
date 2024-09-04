@@ -9,8 +9,8 @@ let f = fn(x) {x + 1}; f(1)
 (module
     (let
         (identifier)
-        (lambda
-            (identifier)
+        (fn
+            (params (identifier))
             (block
                 (binary_exp
                 (identifier)
