@@ -780,21 +780,8 @@
                 "type": "SEQ",
                 "members": [
                   {
-                    "type": "SEQ",
-                    "members": [
-                      {
-                        "type": "SYMBOL",
-                        "name": "identifier"
-                      },
-                      {
-                        "type": "STRING",
-                        "value": "="
-                      },
-                      {
-                        "type": "SYMBOL",
-                        "name": "_exp"
-                      }
-                    ]
+                    "type": "SYMBOL",
+                    "name": "member"
                   },
                   {
                     "type": "REPEAT",
@@ -806,21 +793,8 @@
                           "name": "_sc"
                         },
                         {
-                          "type": "SEQ",
-                          "members": [
-                            {
-                              "type": "SYMBOL",
-                              "name": "identifier"
-                            },
-                            {
-                              "type": "STRING",
-                              "value": "="
-                            },
-                            {
-                              "type": "SYMBOL",
-                              "name": "_exp"
-                            }
-                          ]
+                          "type": "SYMBOL",
+                          "name": "member"
                         }
                       ]
                     }
@@ -856,6 +830,23 @@
           }
         ]
       }
+    },
+    "member": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "identifier"
+        },
+        {
+          "type": "STRING",
+          "value": "="
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_exp"
+        }
+      ]
     },
     "assignment": {
       "type": "PREC_RIGHT",

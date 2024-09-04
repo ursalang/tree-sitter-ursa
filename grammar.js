@@ -110,15 +110,17 @@ module.exports = grammar({
     map: $ => prec(2, seq('{', sep(seq($._exp, ':', $._exp), ','), optional(','), '}')),
 
     // This rule is complicated by the need not to match `{}` (which is any empty map).
-    // Match an object with at least one assignment, or containing just `;`.
+    // Match an object with at least one member, or containing just `;`.
     // We do not match $._sc because external symbols are matched preferentially, and that would mean
     // we could not use precedence to force `map` to be preferred to `object`.
     object: $ => prec(1,
       choice(
-        seq('{', sep1(seq($.identifier, '=', $._exp), $._sc), $._sc, '}'),
+        seq('{', sep1($.member, $._sc), $._sc, '}'),
         seq('{', ';', '}'),
       ),
     ),
+
+    member: $ => seq($.identifier, '=', $._exp),
 
     assignment: $ => prec.right(seq($.identifier, ':=', $._exp)),
 

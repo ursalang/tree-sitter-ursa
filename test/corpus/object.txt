@@ -15,10 +15,10 @@ Objects
 (module
     (object)
     (object
-        (identifier) (number))
+        (member (identifier) (number)))
     (object
-        (identifier) (number)
-        (identifier) (string))
+        (member (identifier) (number))
+        (member (identifier) (string)))
     (object
-        (identifier) (number)
-        (identifier) (string)))
+        (member (identifier) (number))
+        (member (identifier) (string))))
