@@ -10,7 +10,7 @@ launch f(1)
 ---
 
 (module
-    (await (identifier))
-    (yield)
-    (yield (number))
-    (launch (call (identifier) (number))))
+    (statement (await (identifier)))
+    (statement (yield))
+    (statement (yield (number)))
+    (statement (launch (call (identifier) (number)))))

@@ -8,5 +8,5 @@ var b = y;
 ---
 
 (module
-    (let (identifier) (identifier))
-    (let (identifier) (identifier)))
+    (statement (let (identifier) (identifier)))
+    (statement (let (identifier) (identifier))))

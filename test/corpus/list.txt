@@ -8,5 +8,5 @@ Lists
 ---
 
 (module
-    (list (number) (number) (number))
-    (property_exp (list (number) (number) (number)) (property_identifier)))
+    (statement (list (number) (number) (number)))
+    (statement (property_exp (list (number) (number) (number)) (property_identifier))))

@@ -13,12 +13,12 @@ Objects
 ---
 
 (module
-    (object)
-    (object
-        (member (identifier) (number)))
-    (object
-        (member (identifier) (number))
-        (member (identifier) (string)))
-    (object
+    (statement (object))
+    (statement (object
+        (member (identifier) (number))))
+    (statement (object
         (member (identifier) (number))
         (member (identifier) (string))))
+    (statement (object
+        (member (identifier) (number))
+        (member (identifier) (string)))))

@@ -9,6 +9,6 @@ Blocks
 ---
 
 (module
-    (block (identifier))
-    (block (identifier) (binary_exp (number) (number)))
-    (block (identifier) (binary_exp (number) (number))))
+    (statement (block (statement (identifier))))
+    (statement (block (statement (identifier)) (statement (binary_exp (number) (number)))))
+    (statement (block (statement (identifier)) (statement (binary_exp (number) (number))))))

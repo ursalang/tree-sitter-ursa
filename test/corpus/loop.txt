@@ -7,5 +7,5 @@ loop { break 3 }
 ---
 
 (module
-    (loop
-        (block (break (number)))))
+    (statement (loop
+        (block (statement (break (number)))))))

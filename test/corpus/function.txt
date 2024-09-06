@@ -7,13 +7,13 @@ let f = fn(x) {x + 1}; f(1)
 ---
 
 (module
-    (let
+    (statement (let
         (identifier)
         (fn
             (params (identifier))
-            (block
+            (block (statement
                 (binary_exp
                 (identifier)
-                (number)))))
-    (call (identifier) (number))
+                (number)))))))
+    (statement (call (identifier) (number)))
 )

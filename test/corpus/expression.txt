@@ -11,12 +11,12 @@ not 2;
 ---
 
 (module
-    (binary_exp (number) (number))
-    (binary_exp
+    (statement (binary_exp (number) (number)))
+    (statement (binary_exp
         (binary_exp (number) (number))
-        (number))
-    (identifier)
-    (binary_exp
+        (number)))
+    (statement (identifier))
+    (statement (binary_exp
         (binary_exp (number) (number))
-        (number))
-    (unary_exp (number)))
+        (number)))
+    (statement (unary_exp (number))))

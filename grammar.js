@@ -30,9 +30,18 @@ module.exports = grammar({
 
     _shebang: $ => alias(token(seq("#!", /.*/)), $.line_comment),
 
-    _sequence: $ => seq(sep1($._exp, $._sc), optional($._sc)),
+    _sequence: $ => seq(sep1($.statement, $._sc), optional($._sc)),
 
     block: $ => seq('{', optional($._sequence), '}'),
+
+    statement: $ => choice(
+      $.let,
+      $.use,
+      $.break,
+      $.continue,
+      $.return,
+      $._exp,
+    ),
 
     let: $ => seq(
       choice('let', 'var'),
@@ -46,8 +55,6 @@ module.exports = grammar({
     _sc: $ => choice($._automatic_semicolon, ';'),
 
     _exp: $ => choice(
-      $.let,
-      $.use,
       $.identifier,
       $.binary_exp,
       $.unary_exp,
@@ -63,9 +70,6 @@ module.exports = grammar({
       $.list,
       $.map,
       $.object,
-      $.break,
-      $.return,
-      $.continue,
       $.await,
       $.launch,
       $.yield,

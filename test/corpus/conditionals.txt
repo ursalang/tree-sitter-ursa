@@ -12,17 +12,17 @@ if 3 + 4 == 7 {1} else {0};
 ---
 
 (module
-    (if (bool) (block (number)))
-    (if (bool) (block (number))
-        (block (number)))
-    (if (bool)
-        (block (number))
-        (block (number)))
-    (if
+    (statement (if (bool) (block (statement (number)))))
+    (statement (if (bool) (block (statement (number)))
+        (block (statement (number)))))
+    (statement (if (bool)
+        (block (statement (number)))
+        (block (statement (number)))))
+    (statement (if
         (binary_exp
             (binary_exp (number) (number))
             (number))
-        (block (number))
-        (block (number)))
-    (binary_exp (number) (number))
-    (binary_exp (number) (number)))
+        (block (statement (number)))
+        (block (statement (number)))))
+    (statement (binary_exp (number) (number)))
+    (statement (binary_exp (number) (number))))

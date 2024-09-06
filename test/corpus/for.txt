@@ -9,8 +9,8 @@ for x in l.iterator() {
 ---
 
 (module
-    (for (identifier)
+    (statement (for (identifier)
          (call (property_exp (identifier) (property_identifier)))
-         (block (assignment
+         (block (statement (assignment
              (identifier)
-             (binary_exp (identifier) (identifier))))))
+             (binary_exp (identifier) (identifier))))))))

@@ -9,9 +9,9 @@ Maps
 ---
 
 (module
-    (map)
-    (map)
-    (map
+    (statement (map))
+    (statement (map))
+    (statement (map
         (string) (number)
         (string) (binary_exp (number) (number))
-        (number) (number)))
+        (number) (number))))

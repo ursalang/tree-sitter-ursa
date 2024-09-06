@@ -7,7 +7,7 @@ Numbers
 ---
 
 (module 
-    (number))
+    (statement (number)))
 
 
 =======
@@ -19,4 +19,4 @@ Strings
 ---
 
 (module
-    (string))
+    (statement (string)))
