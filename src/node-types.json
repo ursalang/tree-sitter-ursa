@@ -44,7 +44,7 @@
           "named": true
         },
         {
-          "type": "if",
+          "type": "ifs",
           "named": true
         },
         {
@@ -139,7 +139,7 @@
           "named": true
         },
         {
-          "type": "if",
+          "type": "ifs",
           "named": true
         },
         {
@@ -234,7 +234,7 @@
           "named": true
         },
         {
-          "type": "if",
+          "type": "ifs",
           "named": true
         },
         {
@@ -349,7 +349,7 @@
           "named": true
         },
         {
-          "type": "if",
+          "type": "ifs",
           "named": true
         },
         {
@@ -452,7 +452,7 @@
             "named": true
           },
           {
-            "type": "if",
+            "type": "ifs",
             "named": true
           },
           {
@@ -543,7 +543,7 @@
           "named": true
         },
         {
-          "type": "if",
+          "type": "ifs",
           "named": true
         },
         {
@@ -675,7 +675,7 @@
             "named": true
           },
           {
-            "type": "if",
+            "type": "ifs",
             "named": true
           },
           {
@@ -781,7 +781,7 @@
           "named": true
         },
         {
-          "type": "if",
+          "type": "ifs",
           "named": true
         },
         {
@@ -832,6 +832,25 @@
     }
   },
   {
+    "type": "ifs",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "block",
+          "named": true
+        },
+        {
+          "type": "if",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "launch",
     "named": true,
     "fields": {},
@@ -876,7 +895,7 @@
           "named": true
         },
         {
-          "type": "if",
+          "type": "ifs",
           "named": true
         },
         {
@@ -989,7 +1008,7 @@
             "named": true
           },
           {
-            "type": "if",
+            "type": "ifs",
             "named": true
           },
           {
@@ -1085,7 +1104,7 @@
           "named": true
         },
         {
-          "type": "if",
+          "type": "ifs",
           "named": true
         },
         {
@@ -1195,7 +1214,7 @@
           "named": true
         },
         {
-          "type": "if",
+          "type": "ifs",
           "named": true
         },
         {
@@ -1290,7 +1309,7 @@
           "named": true
         },
         {
-          "type": "if",
+          "type": "ifs",
           "named": true
         },
         {
@@ -1434,7 +1453,7 @@
           "named": true
         },
         {
-          "type": "if",
+          "type": "ifs",
           "named": true
         },
         {
@@ -1533,7 +1552,7 @@
           "named": true
         },
         {
-          "type": "if",
+          "type": "ifs",
           "named": true
         },
         {
@@ -1636,7 +1655,7 @@
           "named": true
         },
         {
-          "type": "if",
+          "type": "ifs",
           "named": true
         },
         {
@@ -1748,7 +1767,7 @@
           "named": true
         },
         {
-          "type": "if",
+          "type": "ifs",
           "named": true
         },
         {
@@ -1858,7 +1877,7 @@
           "named": true
         },
         {
-          "type": "if",
+          "type": "ifs",
           "named": true
         },
         {
