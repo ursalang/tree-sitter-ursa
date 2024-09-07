@@ -2,16 +2,19 @@
 Conditionals
 ============
 
+1 or 2;
+1 and 2;
 if true {3};
 if true {3} else {4};
 if false {3} else {4};
 if 3 + 4 == 7 {1} else {0};
-1 or 2;
-1 and 2;
+if true {3} else if false {4} else {5};
 
 ---
 
 (module
+    (statement (binary_exp (number) (number)))
+    (statement (binary_exp (number) (number)))
     (statement (ifs (if (bool) (block (statement (number))))))
     (statement (ifs (if (bool) (block (statement (number))))
         (block (statement (number)))))
@@ -24,5 +27,8 @@ if 3 + 4 == 7 {1} else {0};
             (number))
         (block (statement (number))))
         (block (statement (number)))))
-    (statement (binary_exp (number) (number)))
-    (statement (binary_exp (number) (number))))
+    (statement (ifs
+        (if (bool)
+            (block (statement (number))))
+        (if (bool) (block (statement (number))))
+        (block (statement (number))))))
