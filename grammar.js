@@ -43,12 +43,26 @@ module.exports = grammar({
       $._exp,
     ),
 
-    let: $ => seq(
-      choice('let', 'var'),
-      field('identifier', $.identifier),
-      '=',
-      field('value', $._exp)
-    ),
+    // Spell out the rule with and without 'and' and wrap it in prec.right
+    // in order to prevent the use of '_automatic_semicolon' from making `if
+    // foo {…}\nelse {…}` from parsing as `if foo {…};else {…}` and hence
+    // giving an error.
+    let: $ => prec.right(choice(
+      seq(
+        choice('let', 'var'),
+        field('identifier', $.identifier),
+        '=',
+        field('value', $._exp),
+        optional($._automatic_semicolon),
+        seq('and', $.let),
+      ),
+      seq(
+        choice('let', 'var'),
+        field('identifier', $.identifier),
+        '=',
+        field('value', $._exp),
+      ),
+    )),
 
     use: $ => prec.right(seq('use', sep1($.identifier, token.immediate('.')))),
 
@@ -88,6 +102,10 @@ module.exports = grammar({
     launch: $ => prec.right(seq('launch', $._exp)),
     yield: $ => prec.right(seq('yield', optional($._exp))),
 
+    // Spell out the rule with and without 'else' and wrap it in prec.right
+    // in order to prevent the use of '_automatic_semicolon' from making `if
+    // foo {…}\nelse {…}` from parsing as `if foo {…};else {…}` and hence
+    // giving an error.
     if: $ => prec.right(choice(
       seq(
         'if',
