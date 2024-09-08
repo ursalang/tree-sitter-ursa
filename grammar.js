@@ -45,7 +45,7 @@ module.exports = grammar({
       $._exp,
     ),
 
-    // Spell out the rule with and without 'and' and wrap it in prec.right
+    // Spell out the rule with and without 'and' and add it to 'conflicts'
     // in order to prevent the use of '_automatic_semicolon' from making `if
     // foo {…}\nelse {…}` from parsing as `if foo {…};else {…}` and hence
     // giving an error.
