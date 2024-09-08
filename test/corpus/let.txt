@@ -4,7 +4,7 @@ Let expressions
 
 let a = x;
 var b = y;
-let a = x and let b = y;
+let a = x and let b = y
 
 ---
 

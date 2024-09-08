@@ -22,6 +22,8 @@ module.exports = grammar({
     $.raw_string_literal,
   ],
 
+  conflicts: $ => [[$.let, $.let]],
+
   rules: {
     module: $ => seq(
       optional($._shebang),
@@ -47,7 +49,7 @@ module.exports = grammar({
     // in order to prevent the use of '_automatic_semicolon' from making `if
     // foo {…}\nelse {…}` from parsing as `if foo {…};else {…}` and hence
     // giving an error.
-    let: $ => prec.right(choice(
+    let: $ => choice(
       seq(
         choice('let', 'var'),
         field('identifier', $.identifier),
@@ -62,7 +64,7 @@ module.exports = grammar({
         '=',
         field('value', $._exp),
       ),
-    )),
+    ),
 
     use: $ => prec.right(seq('use', sep1($.identifier, token.immediate('.')))),
 
