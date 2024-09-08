@@ -10,25 +10,37 @@ if false {3} else {4};
 if 3 + 4 == 7 {1} else {0};
 if true {3} else if false {4} else {5};
 
+if true {3}
+else if false {4}
+else {5};
+
 ---
 
 (module
     (statement (binary_exp (number) (number)))
     (statement (binary_exp (number) (number)))
-    (statement (ifs (if (bool) (block (statement (number))))))
-    (statement (ifs (if (bool) (block (statement (number))))
+    (statement (if (bool) (block (statement (number)))))
+    (statement (if (bool)
+        (block (statement (number)))
         (block (statement (number)))))
-    (statement (ifs (if (bool)
-        (block (statement (number))))
+    (statement (if (bool)
+        (block (statement (number)))
         (block (statement (number)))))
-    (statement (ifs (if
+    (statement (if
         (binary_exp
             (binary_exp (number) (number))
             (number))
-        (block (statement (number))))
+        (block (statement (number)))
         (block (statement (number)))))
-    (statement (ifs
+    (statement
         (if (bool)
-            (block (statement (number))))
-        (if (bool) (block (statement (number))))
-        (block (statement (number))))))
+            (block (statement (number)))
+            (if (bool)
+                (block (statement (number)))
+                (block (statement (number))))))
+    (statement
+        (if (bool)
+            (block (statement (number)))
+            (if (bool)
+                (block (statement (number)))
+                (block (statement (number)))))))

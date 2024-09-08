@@ -58,7 +58,7 @@ module.exports = grammar({
       $.identifier,
       $.binary_exp,
       $.unary_exp,
-      $.ifs,
+      $.if,
       $.fn,
       $.for,
       $.loop,
@@ -88,8 +88,20 @@ module.exports = grammar({
     launch: $ => prec.right(seq('launch', $._exp)),
     yield: $ => prec.right(seq('yield', optional($._exp))),
 
-    ifs: $ => seq(sep1($.if, 'else'), optional(seq('else', $.block))),
-    if: $ => seq('if', $._exp, $.block),
+    if: $ => prec.right(choice(
+      seq(
+        'if',
+        $._exp,
+        $.block,
+        optional($._automatic_semicolon),
+        seq('else', choice($.block, $.if)),
+      ),
+      seq(
+        'if',
+        $._exp,
+        $.block,
+      ),
+    )),
 
     fn: $ => seq(choice('fn', 'gen'), $.params, $.block),
 
