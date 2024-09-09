@@ -94,6 +94,7 @@ module.exports = grammar({
       $.null,
       $.bool,
       $.string,
+      $.raw_string_literal,
       $.number,
     ),
 

@@ -20,3 +20,16 @@ Strings
 
 (module
     (statement (string)))
+
+
+===========
+Raw strings
+===========
+
+r"hello there
+";
+
+---
+
+(module
+    (statement (raw_string_literal)))
