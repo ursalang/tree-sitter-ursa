@@ -47,7 +47,7 @@ module.exports = grammar({
 
     // Spell out the rule with and without 'and' and add it to 'conflicts'
     // in order to prevent the use of '_automatic_semicolon' from making `if
-    // foo {…}\nelse {…}` from parsing as `if foo {…};else {…}` and hence
+    // let {…}\nand let {…}` from parsing as `let {…};and let {…}` and hence
     // giving an error.
     let: $ => choice(
       seq(
