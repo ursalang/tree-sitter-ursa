@@ -108,19 +108,18 @@ module.exports = grammar({
     // in order to prevent the use of '_automatic_semicolon' from making `if
     // foo {…}\nelse {…}` from parsing as `if foo {…};else {…}` and hence
     // giving an error.
+    _if: $ => seq(
+      'if',
+      $._exp,
+      $.block,
+    ),
     if: $ => choice(
       seq(
-        'if',
-        $._exp,
-        $.block,
+        $._if,
         optional($._automatic_semicolon),
         seq('else', choice($.block, $.if)),
       ),
-      seq(
-        'if',
-        $._exp,
-        $.block,
-      ),
+      $._if,
     ),
 
     fn: $ => seq(choice('fn', 'gen'), $.params, $.block),

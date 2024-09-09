@@ -80,10 +80,6 @@
           "named": true
         },
         {
-          "type": "raw_string_literal",
-          "named": true
-        },
-        {
           "type": "string",
           "named": true
         },
@@ -179,10 +175,6 @@
           "named": true
         },
         {
-          "type": "raw_string_literal",
-          "named": true
-        },
-        {
           "type": "string",
           "named": true
         },
@@ -275,10 +267,6 @@
         },
         {
           "type": "property_exp",
-          "named": true
-        },
-        {
-          "type": "raw_string_literal",
           "named": true
         },
         {
@@ -397,10 +385,6 @@
           "named": true
         },
         {
-          "type": "raw_string_literal",
-          "named": true
-        },
-        {
           "type": "string",
           "named": true
         },
@@ -504,10 +488,6 @@
             "named": true
           },
           {
-            "type": "raw_string_literal",
-            "named": true
-          },
-          {
             "type": "string",
             "named": true
           },
@@ -596,10 +576,6 @@
         },
         {
           "type": "property_exp",
-          "named": true
-        },
-        {
-          "type": "raw_string_literal",
           "named": true
         },
         {
@@ -735,10 +711,6 @@
             "named": true
           },
           {
-            "type": "raw_string_literal",
-            "named": true
-          },
-          {
             "type": "string",
             "named": true
           },
@@ -845,10 +817,6 @@
           "named": true
         },
         {
-          "type": "raw_string_literal",
-          "named": true
-        },
-        {
           "type": "string",
           "named": true
         },
@@ -941,10 +909,6 @@
         },
         {
           "type": "property_exp",
-          "named": true
-        },
-        {
-          "type": "raw_string_literal",
           "named": true
         },
         {
@@ -1061,10 +1025,6 @@
             "named": true
           },
           {
-            "type": "raw_string_literal",
-            "named": true
-          },
-          {
             "type": "string",
             "named": true
           },
@@ -1168,10 +1128,6 @@
         },
         {
           "type": "property_exp",
-          "named": true
-        },
-        {
-          "type": "raw_string_literal",
           "named": true
         },
         {
@@ -1285,10 +1241,6 @@
           "named": true
         },
         {
-          "type": "raw_string_literal",
-          "named": true
-        },
-        {
           "type": "string",
           "named": true
         },
@@ -1381,10 +1333,6 @@
         },
         {
           "type": "property_exp",
-          "named": true
-        },
-        {
-          "type": "raw_string_literal",
           "named": true
         },
         {
@@ -1536,10 +1484,6 @@
           "named": true
         },
         {
-          "type": "raw_string_literal",
-          "named": true
-        },
-        {
           "type": "string",
           "named": true
         },
@@ -1632,10 +1576,6 @@
         },
         {
           "type": "property_exp",
-          "named": true
-        },
-        {
-          "type": "raw_string_literal",
           "named": true
         },
         {
@@ -1743,10 +1683,6 @@
         },
         {
           "type": "property_exp",
-          "named": true
-        },
-        {
-          "type": "raw_string_literal",
           "named": true
         },
         {
@@ -1858,10 +1794,6 @@
           "named": true
         },
         {
-          "type": "raw_string_literal",
-          "named": true
-        },
-        {
           "type": "string",
           "named": true
         },
@@ -1969,10 +1901,6 @@
         },
         {
           "type": "property_exp",
-          "named": true
-        },
-        {
-          "type": "raw_string_literal",
           "named": true
         },
         {
@@ -2168,10 +2096,6 @@
   },
   {
     "type": "property_identifier",
-    "named": true
-  },
-  {
-    "type": "raw_string_literal",
     "named": true
   },
   {
