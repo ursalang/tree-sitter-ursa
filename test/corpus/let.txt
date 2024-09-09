@@ -6,10 +6,20 @@ let a = x;
 var b = y;
 let a = x and let b = y
 
+let a = x
+and let b = y
+
+let a = x and
+let b = y
+
 ---
 
 (module
     (statement (let (identifier) (identifier)))
     (statement (let (identifier) (identifier)))
+    (statement (let (identifier) (identifier)
+                    (let (identifier) (identifier))))
+    (statement (let (identifier) (identifier)
+                    (let (identifier) (identifier))))
     (statement (let (identifier) (identifier)
                     (let (identifier) (identifier)))))

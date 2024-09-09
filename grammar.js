@@ -49,6 +49,8 @@ module.exports = grammar({
     // in order to prevent the use of '_automatic_semicolon' from making `if
     // let {…}\nand let {…}` from parsing as `let {…};and let {…}` and hence
     // giving an error.
+    // FIXME: if I factor out the common prefix of the two arguments to
+    // choice, as in 'if', the tests fail.
     let: $ => choice(
       seq(
         choice('let', 'var'),
