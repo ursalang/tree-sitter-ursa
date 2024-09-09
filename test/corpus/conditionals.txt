@@ -14,6 +14,9 @@ if true {3}
 else if false {4}
 else {5};
 
+if true {3}
+f()
+
 ---
 
 (module
@@ -43,4 +46,13 @@ else {5};
             (block (statement (number)))
             (if (bool)
                 (block (statement (number)))
-                (block (statement (number)))))))
+                (block (statement (number))))))
+    (statement
+        (if
+          (bool)
+          (block
+            (statement
+              (number)))))
+    (statement
+        (call
+          (identifier))))

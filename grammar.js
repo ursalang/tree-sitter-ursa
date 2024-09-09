@@ -22,7 +22,7 @@ module.exports = grammar({
     $.raw_string_literal,
   ],
 
-  conflicts: $ => [[$.let, $.let]],
+  conflicts: $ => [[$.let, $.let], [$.if, $.if]],
 
   rules: {
     module: $ => seq(
@@ -104,11 +104,11 @@ module.exports = grammar({
     launch: $ => prec.right(seq('launch', $._exp)),
     yield: $ => prec.right(seq('yield', optional($._exp))),
 
-    // Spell out the rule with and without 'else' and wrap it in prec.right
+    // Spell out the rule with and without 'else' and add it to 'conflicts'
     // in order to prevent the use of '_automatic_semicolon' from making `if
     // foo {…}\nelse {…}` from parsing as `if foo {…};else {…}` and hence
     // giving an error.
-    if: $ => prec.right(choice(
+    if: $ => choice(
       seq(
         'if',
         $._exp,
@@ -121,7 +121,7 @@ module.exports = grammar({
         $._exp,
         $.block,
       ),
-    )),
+    ),
 
     fn: $ => seq(choice('fn', 'gen'), $.params, $.block),
 
