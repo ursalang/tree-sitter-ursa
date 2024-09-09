@@ -1,0 +1,89 @@
+=====
+Types
+=====
+
+let newAccums = fn(): List<fn(x: Int): Void> {
+  var tot = 0
+  let l = [
+    fn(x: Int): Void {
+      tot := tot + x
+    },
+    fn(x: Int): Void {
+      tot := tot + x
+    },
+  ]
+}
+
+---
+
+(module
+  (statement
+    (let
+      (identifier)
+      (fn
+        (fn_type
+          (params)
+          (type_annotation
+            (type
+              (named_type
+                (identifier)
+                (type_args
+                  (type
+                    (fn_type
+                      (params
+                        (identifier)
+                        (type_annotation
+                          (type
+                            (named_type
+                              (identifier)))))
+                      (type_annotation
+                        (type
+                          (named_type
+                            (identifier)))))))))))
+        (block
+          (statement
+            (let
+              (identifier)
+              (number)))
+          (statement
+            (let
+              (identifier)
+              (list
+                (fn
+                  (fn_type
+                    (params
+                      (identifier)
+                      (type_annotation
+                        (type
+                          (named_type
+                            (identifier)))))
+                    (type_annotation
+                      (type
+                        (named_type
+                          (identifier)))))
+                  (block
+                    (statement
+                      (assignment
+                        (identifier)
+                        (binary_exp
+                          (identifier)
+                          (identifier))))))
+                (fn
+                  (fn_type
+                    (params
+                      (identifier)
+                      (type_annotation
+                        (type
+                          (named_type
+                            (identifier)))))
+                    (type_annotation
+                      (type
+                        (named_type
+                          (identifier)))))
+                  (block
+                    (statement
+                      (assignment
+                        (identifier)
+                        (binary_exp
+                          (identifier)
+                          (identifier))))))))))))))

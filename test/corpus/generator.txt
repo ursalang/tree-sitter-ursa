@@ -9,8 +9,8 @@ let f = gen(x) {yield x + 1}; f(1)
 (module
     (statement (let
         (identifier)
-        (fn
-            (params (identifier))
+        (fn (fn_type
+            (params (identifier)))
             (block (statement
                 (yield
                     (binary_exp

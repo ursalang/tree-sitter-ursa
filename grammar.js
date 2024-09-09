@@ -22,7 +22,7 @@ module.exports = grammar({
     $.raw_string_literal,
   ],
 
-  conflicts: $ => [[$.let, $.let], [$.if, $.if]],
+  conflicts: $ => [[$.let, $.let], [$.if, $.if], [$._path, $._exp]],
 
   rules: {
     module: $ => seq(
@@ -30,7 +30,9 @@ module.exports = grammar({
       optional($._sequence),
     ),
 
-    _shebang: $ => alias(token(seq("#!", /.*/)), $.line_comment),
+    _shebang: $ => alias(token(seq('#!', /.*/)), $.line_comment),
+
+    _path: $ => sep1($.identifier, token.immediate('.')),
 
     _sequence: $ => seq(sep1($.statement, $._sc), optional($._sc)),
 
@@ -68,7 +70,7 @@ module.exports = grammar({
       ),
     ),
 
-    use: $ => prec.right(seq('use', sep1($.identifier, token.immediate('.')))),
+    use: $ => prec.right(seq('use', $._path)),
 
     _sc: $ => choice($._automatic_semicolon, ';'),
 
@@ -125,11 +127,20 @@ module.exports = grammar({
       $._if,
     ),
 
-    fn: $ => seq(choice('fn', 'gen'), $.params, $.block),
+    fn: $ => seq(
+      $.fn_type,
+      $.block,
+    ),
+
+    fn_type: $ => seq(
+      choice('fn', 'gen'),
+      $.params,
+      optional($.type_annotation),
+    ),
 
     params: $ => seq(
       '(',
-      sep($.identifier, ','),
+      sep(seq($.identifier, optional($.type_annotation)), ','),
       optional(','),
       ')',
     ),
@@ -154,7 +165,7 @@ module.exports = grammar({
     // we could not use precedence to force `map` to be preferred to `object`.
     object: $ => prec(1,
       choice(
-        seq('{', sep1($.member, $._sc), $._sc, '}'),
+        seq(optional($.named_type), '{', sep1($.member, $._sc), $._sc, '}'),
         seq('{', ';', '}'),
       ),
     ),
@@ -219,6 +230,39 @@ module.exports = grammar({
         /u{[0-9a-fA-F]+}/
       )
     )),
+
+    named_type: $ => seq(
+      $._path,
+      optional($.type_args),
+    ),
+
+    type: $ => choice(
+      sep1($.named_type, '+'),
+      $.fn_type,
+    ),
+
+    type_params: $ => seq(
+      '<',
+      sep($.type_param, ','),
+      optional(','),
+      '>',
+    ),
+
+    type_param: $ => seq(
+      $.identifier,
+      $.type_annotation,
+    ),
+
+    type_args: $ => seq(
+      '<',
+      sep($.type, ','),
+      optional(','),
+      '>',
+    ),
+
+    named_type_annotation: $ => seq(':', $.named_type),
+    type_annotation: $ => seq(':', $.type),
+    fn_type_annotation: $ => seq(':', $.fn_type),
 
     comment: $ => choice(
       $.line_comment,
