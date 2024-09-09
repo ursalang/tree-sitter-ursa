@@ -1,6 +1,6 @@
 {
   "name": "@ursalang/tree-sitter-ursa",
-  "version": "1.0.19",
+  "version": "1.0.20",
   "description": "Tree-sitter grammar for Ursa.",
   "repository": {
     "type": "git",
