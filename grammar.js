@@ -22,7 +22,7 @@ module.exports = grammar({
     $.raw_string_literal,
   ],
 
-  conflicts: $ => [[$.let, $.let], [$.if, $.if], [$._path, $._exp]],
+  conflicts: $ => [[$.let, $.let], [$.if, $.if], [$._path, $._primary]],
 
   rules: {
     module: $ => seq(
@@ -74,30 +74,34 @@ module.exports = grammar({
 
     _sc: $ => choice($._automatic_semicolon, ';'),
 
-    _exp: $ => choice(
+    _primary: $ => choice(
       $.identifier,
-      $.binary_exp,
-      $.unary_exp,
-      $.if,
-      $.fn,
-      $.for,
-      $.loop,
-      $.assignment,
-      seq('(', $._exp, ')'),
-      $.block,
-      $.call,
-      $.property_exp,
-      $.list,
-      $.map,
-      $.object,
-      $.await,
-      $.launch,
-      $.yield,
       $.null,
       $.bool,
       $.string,
       $.raw_string_literal,
       $.number,
+      $.fn,
+      seq('(', $._exp, ')'),
+      $.list,
+      $.map,
+      $.object,
+      $.block,
+    ),
+
+    _exp: $ => choice(
+      $._primary,
+      $.binary_exp,
+      $.unary_exp,
+      $.if,
+      $.for,
+      $.loop,
+      $.assignment,
+      $.call,
+      $.property_exp,
+      $.await,
+      $.launch,
+      $.yield,
     ),
 
     break: $ => prec.right(seq('break', optional($._exp))),
@@ -172,7 +176,11 @@ module.exports = grammar({
 
     member: $ => seq($.identifier, '=', $._exp),
 
-    assignment: $ => prec.right(seq($.identifier, ':=', $._exp)),
+    assignment: $ => prec.right(seq(
+      choice($._primary, $.property_exp, $.call),
+      ':=',
+      $._exp,
+    )),
 
     binary_exp: $ => choice(
       prec.left(1, seq($._exp, choice('or', 'and'), $._exp)),

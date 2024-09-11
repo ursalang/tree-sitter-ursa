@@ -6,6 +6,8 @@ a := 3;
 b := "hello";
 c := 3 + (4 * 5);
 d := [1, 2, 3];
+a.b := 3;
+2 := 3;
 
 ---
 
@@ -16,4 +18,7 @@ d := [1, 2, 3];
         (binary_exp (number)
             (binary_exp (number) (number)))))
     (statement (assignment (identifier)
-        (list (number) (number) (number)))))
+        (list (number) (number) (number))))
+    (statement (assignment
+        (property_exp (identifier) (property_identifier)) (number)))
+    (statement (assignment (number) (number))))
