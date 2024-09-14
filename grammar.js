@@ -183,11 +183,11 @@ module.exports = grammar({
     )),
 
     binary_exp: $ => choice(
-      prec.left(1, seq($._exp, choice('or', 'and'), $._exp)),
-      prec.left(2, seq($._exp, choice('==', '!=', '<', '<=', '>', '>='), $._exp)),
-      prec.left(3, seq($._exp, choice('+', '-'), $._exp)),
-      prec.left(4, seq($._exp, choice('*', '/', '%'), $._exp)),
-      prec.left(5, seq($._exp, '**', $._exp)),
+      prec.left(1, seq($._exp, field('operator', choice('or', 'and')), $._exp)),
+      prec.left(2, seq($._exp, field('operator', choice('==', '!=', '<', '<=', '>', '>=')), $._exp)),
+      prec.left(3, seq($._exp, field('operator', choice('+', '-')), $._exp)),
+      prec.left(4, seq($._exp, field('operator', choice('*', '/', '%')), $._exp)),
+      prec.left(5, seq($._exp, field('operator', '**'), $._exp)),
     ),
 
     unary_exp: $ => choice(
