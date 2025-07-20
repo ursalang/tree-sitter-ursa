@@ -184,16 +184,16 @@ module.exports = grammar({
 
     binary_exp: $ => choice(
       prec.left(1, seq($._exp, field('operator', choice('or', 'and')), $._exp)),
-      prec.left(2, seq($._exp, field('operator', choice('==', '!=', '<', '<=', '>', '>=')), $._exp)),
-      prec.left(3, seq($._exp, field('operator', choice('+', '-')), $._exp)),
-      prec.left(4, seq($._exp, field('operator', choice('*', '/', '%')), $._exp)),
-      prec.left(5, seq($._exp, field('operator', '**'), $._exp)),
+      prec.left(3, seq($._exp, field('operator', choice('&', '^', '|', '<<', '>>', '>>>')), $._exp)),
+      prec.left(4, seq($._exp, field('operator', choice('==', '!=', '<', '<=', '>', '>=')), $._exp)),
+      prec.left(5, seq($._exp, field('operator', choice('+', '-')), $._exp)),
+      prec.left(6, seq($._exp, field('operator', choice('*', '/', '%')), $._exp)),
+      prec.left(7, seq($._exp, field('operator', '**'), $._exp)),
     ),
 
     unary_exp: $ => choice(
-      prec.left(6, seq('not', $._exp)),
-      prec.left(7, seq('+', $._exp)),
-      prec.left(7, seq('-', $._exp)),
+      prec.left(2, seq('not', $._exp)),
+      prec.left(8, seq(choice('~', '+', '-'), $._exp)),
     ),
 
     call: $ => prec.left(9, seq(field('function', $._exp), '(', sep($._exp, ','), ')')),
