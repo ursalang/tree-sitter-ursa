@@ -92,6 +92,7 @@
 
 [
   "and"
+  "asm"
   "break"
   (continue)
   "else"
