@@ -1,6 +1,6 @@
 # Tree-sitter grammar for Ursa
 
-© 2023-2025 Reuben Thomas  
+© Reuben Thomas <rrt@sc3d.org>  
 
 This is a tree-sitter grammar for [Ursa](https://github.com/ursalang).
 
