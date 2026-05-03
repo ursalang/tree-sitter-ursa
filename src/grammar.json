@@ -121,6 +121,99 @@
         }
       ]
     },
+    "_asm_sequence": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_asm_statement"
+            },
+            {
+              "type": "REPEAT",
+              "content": {
+                "type": "SEQ",
+                "members": [
+                  {
+                    "type": "SYMBOL",
+                    "name": "_sc"
+                  },
+                  {
+                    "type": "SYMBOL",
+                    "name": "_asm_statement"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_sc"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "_asm_statement": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "trap"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_primary"
+        }
+      ]
+    },
+    "trap": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "trap"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "identifier"
+        }
+      ]
+    },
+    "_asm_block": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "{"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_asm_sequence"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "STRING",
+          "value": "}"
+        }
+      ]
+    },
     "block": {
       "type": "SEQ",
       "members": [
@@ -427,6 +520,10 @@
         {
           "type": "SYMBOL",
           "name": "yield"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "asm"
         }
       ]
     },
@@ -794,6 +891,19 @@
         {
           "type": "SYMBOL",
           "name": "block"
+        }
+      ]
+    },
+    "asm": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "asm"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_asm_block"
         }
       ]
     },

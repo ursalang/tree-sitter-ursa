@@ -1,0 +1,14 @@
+========
+Assembly
+========
+
+asm { eq };
+asm { eq; (3+4); trap foo };
+asm { eq; (3+4); trap foo }
+
+---
+
+(module
+    (statement (asm (identifier)))
+    (statement (asm (identifier) (binary_exp (number) (number)) (trap (identifier))))
+    (statement (asm (identifier) (binary_exp (number) (number)) (trap (identifier)))))

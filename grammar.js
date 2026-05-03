@@ -1,6 +1,6 @@
 /**
  * Tree-sitter grammar for Ursa
- * © 2023-2024 Reuben Thomas
+ * © 2023-2026 Reuben Thomas
  * It is distributed under the ISC licence.
  */
 
@@ -35,6 +35,17 @@ module.exports = grammar({
     _path: $ => sep1($.identifier, token.immediate('.')),
 
     _sequence: $ => seq(sep1($.statement, $._sc), optional($._sc)),
+
+    _asm_sequence: $ => seq(sep1($._asm_statement, $._sc), optional($._sc)),
+
+    _asm_statement: $ => choice(
+      $.trap,
+      $._primary,
+    ),
+
+    trap: $ => seq("trap", $.identifier),
+
+    _asm_block: $ => seq('{', optional($._asm_sequence), '}'),
 
     block: $ => seq('{', optional($._sequence), '}'),
 
@@ -102,6 +113,7 @@ module.exports = grammar({
       $.await,
       $.launch,
       $.yield,
+      $.asm,
     ),
 
     break: $ => prec.right(seq('break', optional($._exp))),
@@ -158,6 +170,8 @@ module.exports = grammar({
       field('iterator', $._exp),
       $.block,
     ),
+
+    asm: $ => seq('asm', $._asm_block),
 
     list: $ => seq('[', sep($._exp, ','), optional(','), ']'),
 
