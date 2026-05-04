@@ -3,10 +3,12 @@ Numbers
 =======
 
 4;
+-1;
 
 ---
 
 (module 
+    (statement (number))
     (statement (number)))
 
 

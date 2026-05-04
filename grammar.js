@@ -220,7 +220,7 @@ module.exports = grammar({
 
     identifier: $ => /\p{ID_Start}\p{ID_Continue}*/,
 
-    number: $ => /[0-9.eE]+/,
+    number: $ => /[+-]?[0-9.eE]+/,
 
     bool: () => choice('false', 'true'),
 

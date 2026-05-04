@@ -1592,7 +1592,7 @@
     },
     "number": {
       "type": "PATTERN",
-      "value": "[0-9.eE]+"
+      "value": "[+-]?[0-9.eE]+"
     },
     "bool": {
       "type": "CHOICE",
