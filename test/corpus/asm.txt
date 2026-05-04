@@ -9,6 +9,6 @@ asm { eq; (3+4); trap foo }
 ---
 
 (module
-    (statement (asm (identifier)))
-    (statement (asm (identifier) (binary_exp (number) (number)) (trap (identifier))))
-    (statement (asm (identifier) (binary_exp (number) (number)) (trap (identifier)))))
+    (statement (asm (asm_instruction (identifier))))
+    (statement (asm (asm_instruction (identifier)) (binary_exp (number) (number)) (asm_instruction (identifier) (identifier))))
+    (statement (asm (asm_instruction (identifier)) (binary_exp (number) (number)) (asm_instruction (identifier) (identifier)))))

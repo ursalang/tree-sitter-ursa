@@ -39,11 +39,11 @@ module.exports = grammar({
     _asm_sequence: $ => seq(sep1($._asm_statement, $._sc), optional($._sc)),
 
     _asm_statement: $ => choice(
-      $.trap,
+      $.asm_instruction,
       $._primary,
     ),
 
-    trap: $ => seq("trap", $.identifier),
+    asm_instruction: $ => repeat1(prec(2, $.identifier)),
 
     _asm_block: $ => seq('{', optional($._asm_sequence), '}'),
 

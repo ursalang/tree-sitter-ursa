@@ -168,7 +168,7 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "trap"
+          "name": "asm_instruction"
         },
         {
           "type": "SYMBOL",
@@ -176,18 +176,16 @@
         }
       ]
     },
-    "trap": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "trap"
-        },
-        {
+    "asm_instruction": {
+      "type": "REPEAT1",
+      "content": {
+        "type": "PREC",
+        "value": 2,
+        "content": {
           "type": "SYMBOL",
           "name": "identifier"
         }
-      ]
+      }
     },
     "_asm_block": {
       "type": "SEQ",

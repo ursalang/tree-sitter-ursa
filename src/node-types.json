@@ -12,6 +12,10 @@
           "named": true
         },
         {
+          "type": "asm_instruction",
+          "named": true
+        },
+        {
           "type": "assignment",
           "named": true
         },
@@ -92,15 +96,26 @@
           "named": true
         },
         {
-          "type": "trap",
-          "named": true
-        },
-        {
           "type": "unary_exp",
           "named": true
         },
         {
           "type": "yield",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "asm_instruction",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
           "named": true
         }
       ]
@@ -2082,21 +2097,6 @@
     "fields": {}
   },
   {
-    "type": "trap",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "identifier",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
     "type": "type",
     "named": true,
     "fields": {},
@@ -2595,10 +2595,6 @@
   },
   {
     "type": "return",
-    "named": false
-  },
-  {
-    "type": "trap",
     "named": false
   },
   {
